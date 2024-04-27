@@ -154,7 +154,7 @@ const minimum = 15;
 const maximum = 20;
 console.log(Math.floor(Math.random() * (maximum - minimum + 1)) + minimum);
 
-// ########################## Random Max & Min Values Maker #######################
+// ########################## Palindrome #######################
 
 let checkPalindrome = ((input) => {
   let str = String(input);
