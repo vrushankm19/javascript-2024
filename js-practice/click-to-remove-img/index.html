@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Target Using Remove Img</h2>
+        <div class="row gap-5" id="rootImg">
+            <div class="col-2 p-0"><img class="w-100" src="https://images.pexels.com/photos/25649820/pexels-photo-25649820/free-photo-of-view-of-the-milan-cathedral-in-milan-lombardy-italy.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+            <div class="col-2 p-0"><img class="w-100" src="https://images.pexels.com/photos/26699663/pexels-photo-26699663/free-photo-of-a-woman-walking-down-a-path-in-the-woods.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+            <div class="col-2 p-0"><img class="w-100" src="https://images.pexels.com/photos/24039107/pexels-photo-24039107/free-photo-of-a-dirt-path-leading-up-to-a-mountain-in-the-clouds.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+            <div class="col-2 p-0"><img class="w-100" src="https://images.pexels.com/photos/25649820/pexels-photo-25649820/free-photo-of-view-of-the-milan-cathedral-in-milan-lombardy-italy.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+            <div class="col-2 p-0"><img class="w-100" src="https://images.pexels.com/photos/26699663/pexels-photo-26699663/free-photo-of-a-woman-walking-down-a-path-in-the-woods.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+        </div>
+    </div>
+    
+    <div class="container mt-4">
+        <h2>addEventListener True</h2>
+        <div class="row gap-5" id="rootImg2">
+            <div id="rootImg2Div" class="col-2 p-0"><img id="rootImg2DivImg" class="w-100" src="https://images.pexels.com/photos/25649820/pexels-photo-25649820/free-photo-of-view-of-the-milan-cathedral-in-milan-lombardy-italy.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+            <div class="col-2 p-0"><img class="w-100" src="https://images.pexels.com/photos/26699663/pexels-photo-26699663/free-photo-of-a-woman-walking-down-a-path-in-the-woods.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+            <div class="col-2 p-0"><img class="w-100" src="https://images.pexels.com/photos/24039107/pexels-photo-24039107/free-photo-of-a-dirt-path-leading-up-to-a-mountain-in-the-clouds.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+            <div class="col-2 p-0"><img class="w-100" src="https://images.pexels.com/photos/25649820/pexels-photo-25649820/free-photo-of-view-of-the-milan-cathedral-in-milan-lombardy-italy.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+            <div class="col-2 p-0"><img class="w-100" src="https://images.pexels.com/photos/26699663/pexels-photo-26699663/free-photo-of-a-woman-walking-down-a-path-in-the-woods.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <h2>addEventListener stopPropagation</h2>
+        <div class="row gap-5" id="rootImg3">
+            <div id="rootImg3Div" class="col-2 p-0"><img id="rootImg3DivImg" class="w-100" src="https://images.pexels.com/photos/25649820/pexels-photo-25649820/free-photo-of-view-of-the-milan-cathedral-in-milan-lombardy-italy.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+            <div class="col-2 p-0"><img class="w-100" src="https://images.pexels.com/photos/26699663/pexels-photo-26699663/free-photo-of-a-woman-walking-down-a-path-in-the-woods.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+            <div class="col-2 p-0"><img class="w-100" src="https://images.pexels.com/photos/24039107/pexels-photo-24039107/free-photo-of-a-dirt-path-leading-up-to-a-mountain-in-the-clouds.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+            <div class="col-2 p-0"><img class="w-100" src="https://images.pexels.com/photos/25649820/pexels-photo-25649820/free-photo-of-view-of-the-milan-cathedral-in-milan-lombardy-italy.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+            <div class="col-2 p-0"><img class="w-100" src="https://images.pexels.com/photos/26699663/pexels-photo-26699663/free-photo-of-a-woman-walking-down-a-path-in-the-woods.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></div>
+        </div>
+    </div>
+
+</body>
+<script>
+    // Target Using Remove Img
+    let rootImg = document.querySelector("#rootImg");
+    
+    rootImg.addEventListener("click", function(e){
+        console.log(e.target.tagName)
+        if(e.target.tagName == "IMG"){
+            e.target.parentNode.remove()
+        }
+    })
+    
+    // addEventListener True
+    
+    let rootImg2 = document.querySelector("#rootImg2");
+    let rootImg2Div = document.querySelector("#rootImg2Div");
+    let rootImg2DivImg = document.querySelector("#rootImg2DivImg");
+
+    rootImg2.addEventListener("click", function(e){
+        console.log("Root Main 1")
+    },true)
+
+    rootImg2Div.addEventListener("click", function(e){
+        console.log("Root Div 1.1")
+    },true)
+
+    rootImg2DivImg.addEventListener("click", function(e){
+        // e.stopPropagation();
+        console.log("Root img 1.1.1");
+    },true)
+
+    // addEventListener stopPropagation
+
+    let rootImg3 = document.querySelector("#rootImg3");
+    let rootImg3Div = document.querySelector("#rootImg3Div");
+    let rootImg3DivImg = document.querySelector("#rootImg3DivImg");
+
+    rootImg3.addEventListener("click", function(e){
+        console.log("Root Main 1")
+    })
+
+    rootImg3Div.addEventListener("click", function(e){
+        console.log("Root Div 1.1")
+    })
+
+    rootImg3DivImg.addEventListener("click", function(e){
+        e.stopPropagation();
+        console.log("Root img 1.1.1");
+    })
+</script>
+</html>

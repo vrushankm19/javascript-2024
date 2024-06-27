@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container mt-5 col-4">
+        <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Guess a Number</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter a Guess Number" autocomplete="one-time-code">
+            </div>
+            <div class="bg-dark p-1 mb-2">
+            <p id="newData" class="text-white m-0">0</p>
+        </div>
+            <p>You Guess <span id="countAction"></span></p>
+            <h3 class="m-0 mb-3">Result :<span id="resultCountAction"></span></h3>
+            <div id="alertsuccess" class="alert alert-success" role="alert" style="display: none;">
+                You are Wine 🎉 if You Want to Play More Click to Reset Game Button ☝
+              </div>
+              <div id="alertReset" class="alert alert-danger" role="alert" style="display: none;">
+                Game Over if You Want to Play More Click to Reset Game Button ☝
+              </div>
+            
+              <div class="mt-5">
+                <button id="submitData" type="submit" class="btn btn-primary">Submit Data</button>
+                <button id="resetData" type="submit" class="btn btn-warning">Reset Game</button>
+            </div>
+          </form>
+    </div>
+
+</body>
+<script>
+    let randomNumber = parseInt(Math.random() * 100 + 1);
+    let exampleInputEmail1 = document.querySelector("#exampleInputEmail1");
+    let newData = document.querySelector("#newData");
+    let countAction = document.querySelector("#countAction");
+    let resultCountAction = document.querySelector("#resultCountAction");
+    let submitData = document.querySelector("#submitData");
+    let resetData = document.querySelector("#resetData");
+    let alertsuccess = document.querySelector("#alertsuccess");
+    let alertSame = document.querySelectorAll(".alert");
+    let alertReset = document.querySelector("#alertReset");
+    let guessData = [];
+    let guessChecker = 10;
+    countAction.innerHTML = guessChecker;
+    
+    let playGame = true;
+
+    console.log(randomNumber)
+    
+    if(playGame){
+        submitData.addEventListener("click", function(e){
+            e.preventDefault();
+            numberCheck();
+            console.log(exampleInputEmail1.value);
+        })
+    }
+
+    resetData.addEventListener("click", function(e){
+        e.preventDefault();
+        alertSame[0].style.display = "none";
+        alertSame[1].style.display = "none";
+        guessData = [];
+        guessChecker = 10;
+        countAction.innerHTML = guessChecker;
+        exampleInputEmail1.removeAttribute("disabled","");
+        submitData.removeAttribute("disabled","");
+        resultCountAction.innerHTML = ""
+        newData.innerHTML = 0;
+        playGame = true;
+    })
+
+    let guessDataMap = () => {
+        let guessDataMapSet = "";
+        guessData.map((gData) => {
+            guessDataMapSet += `${gData} `;
+        })
+        newData.innerHTML = guessDataMapSet;
+        console.log("gData is" + guessDataMapSet);
+        if(randomNumber == exampleInputEmail1.value){
+            stopGame()
+            resultCountAction.innerHTML = "You Are Wine 🎉";
+            alertsuccess.style.display = "block";
+        } else if(randomNumber < exampleInputEmail1.value){
+            resultCountAction.innerHTML = "You Are Guess is High 👎";
+        } else{
+            resultCountAction.innerHTML = "You Are Guess is Low 👎";
+        }
+    }
+
+    let guessCheckerTrue = () => {
+        if(guessChecker > 0){
+        console.log("Data is under 100");
+        guessData.push(exampleInputEmail1.value);
+        guessDataMap();
+        console.log(guessData);
+        exampleInputEmail1.value = "";
+        guessChecker--;
+        countAction.innerHTML = guessChecker;   
+        console.log(guessChecker);
+        } else{
+            console.log("Else guessCheckerTrue");
+            stopGame()
+            alertReset.style.display = "block";
+        }
+    }
+
+    let stopGame = () => {
+        exampleInputEmail1.value = "";
+        exampleInputEmail1.setAttribute("disabled","");
+        submitData.setAttribute("disabled","");
+        playGame = false;
+    }
+
+    let numberCheck = () => {
+        console.log(typeof exampleInputEmail1.value);
+        if(exampleInputEmail1.value == ""){
+            alert("Data is empty");
+        } else if(exampleInputEmail1.value <= 100 && exampleInputEmail1.value > 0){
+            guessCheckerTrue()
+        } else{
+            alert("Please Enter Number Only 1 TO 100 Number");
+            exampleInputEmail1.value = "";
+        }
+    }
+
+    
+
+
+</script>
+<!-- <script>
+    let randomNumber = parseInt(Math.random() * 100 + 1);
+    let exampleInputEmail1 = document.querySelector("#exampleInputEmail1");
+    let submitData = document.querySelector("#submitData");
+    let newData = document.querySelector("#newData");
+    let countAction = document.querySelector("#countAction");
+    let resultCountAction = document.querySelector("#resultCountAction");
+    let resetData = document.querySelector("#resetData");
+    let countActionMain = 10;
+    let gameData = true;
+    countAction.innerHTML = countActionMain;
+
+    console.log(randomNumber);
+    
+    let coreData = [];
+    function setData(){
+        newData.innerHTML = ""
+        coreData.forEach((data) => {
+            newData.innerHTML = newData.innerHTML + data + "," ;
+            console.log(data);
+        })
+        countActionMain--;
+        countAction.innerHTML = countActionMain;
+        console.log(2)
+        if(countActionMain < 1){
+            exampleInputEmail1.setAttribute("disabled","");
+            submitData.setAttribute("disabled","");
+            resultCountAction.innerHTML = "Your Are Not Wine";
+        }
+        if(!gameData){
+            countActionMain = 10;
+            countAction.innerHTML = countActionMain;
+            coreData = [];
+            newData.innerHTML = 0;
+            console.log("my data is " + gameData)
+            gameData = true;
+        }
+    }
+    function dataCheck(){
+        if(randomNumber < exampleInputEmail1.value){
+                resultCountAction.innerHTML = "Your Data is big";
+            } else if(randomNumber > exampleInputEmail1.value){
+                resultCountAction.innerHTML = "Your Data is Lass";
+            } else {
+                resultCountAction.innerHTML = "Your Are Wine";
+                // countActionMain = 10;
+                // console.log(1)
+                gameData = false;
+            }
+    }
+    submitData.addEventListener("click", function(e){
+        e.preventDefault();
+        if(exampleInputEmail1.value == ""){
+            alert("Enter Data is Empty");
+            exampleInputEmail1.value = "";
+        } else if(exampleInputEmail1.value > 100){
+            alert("Enter Data is Biger");
+            exampleInputEmail1.value = "";
+        } else if(exampleInputEmail1.value < 0){
+            alert("Enter Data is Lass");
+            exampleInputEmail1.value = "";
+        } else{
+            dataCheck()
+            coreData.push(exampleInputEmail1.value);
+            console.log(coreData);
+            setData();
+            exampleInputEmail1.value = "";
+
+        }
+    })
+</script> -->
+</html>

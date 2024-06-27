@@ -156,6 +156,7 @@ console.log(Math.floor(Math.random() * (maximum - minimum + 1)) + minimum);
 
 // ########################## Palindrome #######################
 
+
 let checkPalindrome = ((input) => {
   let str = String(input);
   let reversedStr = ""
