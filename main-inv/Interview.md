@@ -349,4 +349,20 @@ console.log(ans);
 ```
 ```
 
-This `README.md` file organizes the code snippets by their context, making it easier for users to find related operations together.
+### Base case: if the number is 0 or 1, return 1
+
+```javascript
+function factorial(number) {
+  // Base case: if the number is 0 or 1, return 1
+  console.log(number);
+  if (number === 0 || number === 1) {
+    return 1;
+  } else {
+    // Recursive case: multiply the number by the factorial of the number minus one
+    return number * factorial(number - 1);
+  }
+}
+
+// Example usage:
+console.log(factorial(0)); // Output: 120
+```
