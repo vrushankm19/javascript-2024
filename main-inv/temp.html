@@ -9,26 +9,16 @@
     
 </body>
 <script>
-    let obj = {
-        name: "Vrushank",
-        age: 26,
-        add : {
-            city: "Ahmedabad",
-            new: {
-                bname: "modi",
-            }
-        }
-    }
-
-    let {add: {new:{bname}}} = obj;
-    console.log(bname);
-
-
-    // ___________________________________________
-
     let a = 10;
     let b = 20;
-    [a,b] = [b,a];
-    console.log(b)
+
+    // Swapping values without a third variable
+    a = a + b; // a becomes 30 (10 + 20)
+    b = a - b; // b becomes 10 (30 - 20)
+    a = a - b; // a becomes 20 (30 - 10)
+
+    console.log(a); // Output: 20
+    console.log(b); // Output: 10
+
 </script>
 </html>
