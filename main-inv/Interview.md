@@ -347,7 +347,7 @@ console.log(ans);
 // Output:
 // 9
 ```
-```
+
 
 ### Base case: if the number is 0 or 1, return 1
 
@@ -365,4 +365,5 @@ function factorial(number) {
 
 // Example usage:
 console.log(factorial(0)); // Output: 120
+```
 ```
