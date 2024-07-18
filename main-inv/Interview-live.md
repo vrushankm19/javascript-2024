@@ -79,4 +79,30 @@
 </script>
 </html>
 ```
+
+### interview 1
+
+```javascript
+let obj = {
+    name: "Vrushank",
+    age: 26,
+    add: {
+        city: "Ahmedabad",
+        new: {
+            bname: "modi",
+        }
+    }
+}
+
+let { add: { new: { bname } } } = obj;
+console.log(bname); // Output: "modi"
+
+// ___________________________________________
+
+let a = 10;
+let b = 20;
+[a, b] = [b, a];
+console.log(b); // Output: 10
+
+```
 ```
