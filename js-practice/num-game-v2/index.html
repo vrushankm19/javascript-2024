@@ -18,15 +18,16 @@
         </div>
             <p>You Guess <span id="countAction"></span></p>
             <h3 class="m-0 mb-3">Result :<span id="resultCountAction"></span></h3>
-            <div id="alertsuccess" class="alert alert-success" role="alert" style="display: none;">
+            <!-- <div id="alertsuccess" class="alert alert-success" role="alert" style="display: none;">
                 You are Wine 🎉 if You Want to Play More Click to Reset Game Button ☝
               </div>
               <div id="alertReset" class="alert alert-danger" role="alert" style="display: none;">
                 Game Over if You Want to Play More Click to Reset Game Button ☝
-              </div>
+              </div> -->
             
               <div class="mt-5">
                 <button id="submitData" type="submit" class="btn btn-primary">Submit Data</button>
+                <button id="nextData" type="submit" class="btn btn-dark">Next Guess</button><hr>
                 <button id="resetData" type="submit" class="btn btn-warning">Reset Game</button>
             </div>
           </form>
@@ -41,16 +42,32 @@
     let resultCountAction = document.querySelector("#resultCountAction");
     let submitData = document.querySelector("#submitData");
     let resetData = document.querySelector("#resetData");
+    let nextData = document.querySelector("#nextData");
     let alertsuccess = document.querySelector("#alertsuccess");
     let alertSame = document.querySelectorAll(".alert");
     let alertReset = document.querySelector("#alertReset");
     let guessData = [];
     let guessChecker = 10;
+    let guessCheckerTotal = 0;
     countAction.innerHTML = guessChecker;
     
     let playGame = true;
 
-    console.log(randomNumber)
+    // console.log(randomNumber)
+
+    function randomPossibilities(){
+        for(let x = 1;x <= 5;x++){
+            randomNumber = parseInt(Math.random() * 100 + 1);
+            guessData.push(randomNumber);
+            // console.log(12)
+        }
+        let guessDataMapSet = "";
+        guessData.map((gData) => {
+            guessDataMapSet += `${gData}, `;
+        })
+        newData.innerHTML = guessDataMapSet;
+    }
+    randomPossibilities();
     
     if(playGame){
         submitData.addEventListener("click", function(e){
@@ -60,64 +77,90 @@
         })
     }
 
-    resetData.addEventListener("click", function(e){
+    nextData.addEventListener("click", function(e){
         e.preventDefault();
-        alertSame[0].style.display = "none";
-        alertSame[1].style.display = "none";
-        guessData = [];
-        guessChecker = 10;
-        countAction.innerHTML = guessChecker;
-        exampleInputEmail1.removeAttribute("disabled","");
-        submitData.removeAttribute("disabled","");
-        resultCountAction.innerHTML = ""
-        newData.innerHTML = 0;
-        playGame = true;
+        if(guessChecker > 0){
+            guessChecker--;
+            countAction.innerHTML = guessChecker;
+            exampleInputEmail1.value = "";
+            exampleInputEmail1.removeAttribute("disabled","");
+            submitData.removeAttribute("disabled","");
+            guessData = [];
+            randomPossibilities();
+            resultCountAction.innerHTML = "";
+        }else{
+            stopGame();
+            if(guessCheckerTotal > 5){
+                console.log("more 5")
+            } else if(guessCheckerTotal < 5){
+                console.log("less 5")
+            }
+        }
     })
 
-    let guessDataMap = () => {
-        let guessDataMapSet = "";
-        guessData.map((gData) => {
-            guessDataMapSet += `${gData} `;
-        })
-        newData.innerHTML = guessDataMapSet;
-        console.log("gData is" + guessDataMapSet);
-        if(randomNumber == exampleInputEmail1.value){
-            stopGame()
-            resultCountAction.innerHTML = "You Are Wine 🎉";
-            alertsuccess.style.display = "block";
-        } else if(randomNumber < exampleInputEmail1.value){
-            resultCountAction.innerHTML = "You Are Guess is High 👎";
-        } else{
-            resultCountAction.innerHTML = "You Are Guess is Low 👎";
-        }
-    }
+    resetData.addEventListener("click", function(e){
+        e.preventDefault();
+        // alertSame[0].style.display = "none";
+        // alertSame[1].style.display = "none";
+        // guessData = [];
+        // guessChecker = 10;
+        // countAction.innerHTML = guessChecker;
+        // exampleInputEmail1.removeAttribute("disabled","");
+        // submitData.removeAttribute("disabled","");
+        // resultCountAction.innerHTML = ""
+        // newData.innerHTML = 0;
+        // playGame = true;
+    })
+
+    // let guessDataMap = () => {
+    //     if(randomNumber == exampleInputEmail1.value){
+    //         resultCountAction.innerHTML = "You Are Wine 🎉";
+    //         // alertsuccess.style.display = "block";
+    //     } else if(randomNumber < exampleInputEmail1.value){
+    //         resultCountAction.innerHTML = "You Are Guess is High 👎";
+    //     } else{
+    //         resultCountAction.innerHTML = "You Are Guess is Low 👎";
+    //     }
+    // }
 
     let guessCheckerTrue = () => {
-        if(guessChecker > 0){
-        console.log("Data is under 100");
-        guessData.push(exampleInputEmail1.value);
-        guessDataMap();
-        console.log(guessData);
-        exampleInputEmail1.value = "";
-        guessChecker--;
-        countAction.innerHTML = guessChecker;   
-        console.log(guessChecker);
-        } else{
-            console.log("Else guessCheckerTrue");
-            stopGame()
-            alertReset.style.display = "block";
+        // if(guessChecker > 0){
+        // guessData.push(exampleInputEmail1.value);
+        // guessDataMap();
+        // console.log(guessData);
+        // exampleInputEmail1.value = "";
+        // guessChecker--;
+        // countAction.innerHTML = guessChecker;   
+        // console.log(guessChecker);
+        // } else{
+        //     console.log("Else guessCheckerTrue");
+        //     stopGame()
+        //     alertReset.style.display = "block";
+        // }
+        let fiveGuess = parseInt(Math.random() * 4);
+        // let fiveGuess = 2;
+        console.log(guessData[fiveGuess] + " " + fiveGuess)
+        if (guessData[fiveGuess] == exampleInputEmail1.value){
+            console.log("You are Win your Value is ", guessData[fiveGuess]);
+            resultCountAction.innerHTML = "You Are Wine 🎉";
+            guessCheckerTotal++;
+        }else{
+            console.log("You are not Win your Value is ", guessData[fiveGuess]);   
+            resultCountAction.innerHTML = "You Are Guess is Rong 👎";
         }
+        exampleInputEmail1.value = "";
+        exampleInputEmail1.setAttribute("disabled","");
+        submitData.setAttribute("disabled","");
     }
 
     let stopGame = () => {
         exampleInputEmail1.value = "";
         exampleInputEmail1.setAttribute("disabled","");
         submitData.setAttribute("disabled","");
-        playGame = false;
     }
 
     let numberCheck = () => {
-        console.log(typeof exampleInputEmail1.value);
+        // console.log(typeof exampleInputEmail1.value);
         if(exampleInputEmail1.value == ""){
             alert("Data is empty");
         } else if(exampleInputEmail1.value <= 100 && exampleInputEmail1.value > 0){
@@ -128,79 +171,5 @@
         }
     }
 
-    
-
-
 </script>
-<!-- <script>
-    let randomNumber = parseInt(Math.random() * 100 + 1);
-    let exampleInputEmail1 = document.querySelector("#exampleInputEmail1");
-    let submitData = document.querySelector("#submitData");
-    let newData = document.querySelector("#newData");
-    let countAction = document.querySelector("#countAction");
-    let resultCountAction = document.querySelector("#resultCountAction");
-    let resetData = document.querySelector("#resetData");
-    let countActionMain = 10;
-    let gameData = true;
-    countAction.innerHTML = countActionMain;
-
-    console.log(randomNumber);
-    
-    let coreData = [];
-    function setData(){
-        newData.innerHTML = ""
-        coreData.forEach((data) => {
-            newData.innerHTML = newData.innerHTML + data + "," ;
-            console.log(data);
-        })
-        countActionMain--;
-        countAction.innerHTML = countActionMain;
-        console.log(2)
-        if(countActionMain < 1){
-            exampleInputEmail1.setAttribute("disabled","");
-            submitData.setAttribute("disabled","");
-            resultCountAction.innerHTML = "Your Are Not Wine";
-        }
-        if(!gameData){
-            countActionMain = 10;
-            countAction.innerHTML = countActionMain;
-            coreData = [];
-            newData.innerHTML = 0;
-            console.log("my data is " + gameData)
-            gameData = true;
-        }
-    }
-    function dataCheck(){
-        if(randomNumber < exampleInputEmail1.value){
-                resultCountAction.innerHTML = "Your Data is big";
-            } else if(randomNumber > exampleInputEmail1.value){
-                resultCountAction.innerHTML = "Your Data is Lass";
-            } else {
-                resultCountAction.innerHTML = "Your Are Wine";
-                // countActionMain = 10;
-                // console.log(1)
-                gameData = false;
-            }
-    }
-    submitData.addEventListener("click", function(e){
-        e.preventDefault();
-        if(exampleInputEmail1.value == ""){
-            alert("Enter Data is Empty");
-            exampleInputEmail1.value = "";
-        } else if(exampleInputEmail1.value > 100){
-            alert("Enter Data is Biger");
-            exampleInputEmail1.value = "";
-        } else if(exampleInputEmail1.value < 0){
-            alert("Enter Data is Lass");
-            exampleInputEmail1.value = "";
-        } else{
-            dataCheck()
-            coreData.push(exampleInputEmail1.value);
-            console.log(coreData);
-            setData();
-            exampleInputEmail1.value = "";
-
-        }
-    })
-</script> -->
 </html>
