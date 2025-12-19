@@ -339,21 +339,8 @@ const newFun2 = (ele) => {
 let a = [1, 2, 3, 4, 6];
 console.log(newFun(a));
 console.log(newFun2(a));
----
 
 ```
 
-✅ This will render correctly on GitHub.
-If you want, I can also help you add a short explanation section for your README.
 
 
----
-
-If you'd like, I can:
-
-✅ Add a **table of contents**  
-✅ Add **syntax highlighting** or icons  
-✅ Convert this into a **GitHub-styled README template**  
-
-Just tell me!
-```
