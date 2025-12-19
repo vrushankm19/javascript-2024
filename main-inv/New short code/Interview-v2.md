@@ -317,9 +317,6 @@ let ans = main.reduce((acc, val) => val);
 console.log(ans); // 9
 ```
 
----
-
-```
 
 ## 4.3 Find Missing Number in arry
 
@@ -342,6 +339,8 @@ const newFun2 = (ele) => {
 let a = [1, 2, 3, 4, 6];
 console.log(newFun(a));
 console.log(newFun2(a));
+---
+
 ```
 
 ✅ This will render correctly on GitHub.
