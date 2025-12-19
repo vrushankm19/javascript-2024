@@ -318,6 +318,11 @@ console.log(ans); // 9
 ```
 
 
+---
+## 2025 A New Q/A Add
+
+---
+
 ## 5 Find Missing Number in arry
 
 ```javascript
