@@ -10,7 +10,7 @@ A collection of JavaScript logic examples categorized for easy reading.
 
 ---
 
-# 📌 1. Array Operations
+## 📌 1. Array Operations
 
 ## 1.1 Find Pairs That Sum to a Target
 ```javascript
