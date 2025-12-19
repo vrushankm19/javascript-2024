@@ -321,6 +321,32 @@ console.log(ans); // 9
 
 ```
 
+
+```js
+const newFun = (ele) => {
+  for (let i = 1; i <= ele.length; i++) {
+    if (!ele.includes(i)) return i;
+  }
+  return -1;
+};
+
+const newFun2 = (ele) => {
+  let freshArr = new Set(ele);
+  for (let i = 1; i <= ele.length; i++) {
+    if (!freshArr.has(i)) return i;
+  }
+  return -1;
+};
+
+let a = [1, 2, 3, 4, 6];
+console.log(newFun(a));
+console.log(newFun2(a));
+```
+
+✅ This will render correctly on GitHub.
+If you want, I can also help you add a short explanation section for your README.
+
+
 ---
 
 If you'd like, I can:
