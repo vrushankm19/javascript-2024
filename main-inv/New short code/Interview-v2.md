@@ -317,7 +317,6 @@ let ans = main.reduce((acc, val) => val);
 console.log(ans); // 9
 ```
 
-
 ---
 ## 2025 A New Q/A Add
 
