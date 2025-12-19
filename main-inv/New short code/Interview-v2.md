@@ -318,7 +318,7 @@ console.log(ans); // 9
 ```
 
 
-## 4.3 Find Missing Number in arry
+## 5 Find Missing Number in arry
 
 ```javascript
 const newFun = (ele) => {
