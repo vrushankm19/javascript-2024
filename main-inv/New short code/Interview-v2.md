@@ -321,8 +321,9 @@ console.log(ans); // 9
 
 ```
 
+## 4.3 Find Missing Number in arry
 
-```js
+```javascript
 const newFun = (ele) => {
   for (let i = 1; i <= ele.length; i++) {
     if (!ele.includes(i)) return i;
