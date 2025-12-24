@@ -10,7 +10,7 @@
 
 _Primitive data types are immutable, meaning that their values cannot be changed. When you perform operations on primitive values, you are working with copies of the actual values._
 
-### 2. Non-Primitive (Reference) Data Types (Pass By Reference) [Heap]:
+### 2. Non-Primitive (Pass By Reference) Data Types [Heap]:
 - **Object**: Represents a collection of key-value pairs and is a fundamental data structure in JavaScript.
 - **Array**: A specialized type of object used to store and manipulate ordered collections of data.
 - **Function**: A type of object that can be invoked, or called, to perform a set of actions.
