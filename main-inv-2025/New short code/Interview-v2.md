@@ -321,7 +321,7 @@ console.log(ans); // 9
 ```javascript
 const newFun = (ele) => {
   for (let i = 1; i <= ele.length; i++) {
-    if (!ele.includes(i)) return i;
+    if (!ele.includes(i)) return i; //includes
   }
   return -1;
 };
@@ -329,14 +329,14 @@ const newFun = (ele) => {
 const newFun2 = (ele) => {
   let freshArr = new Set(ele);
   for (let i = 1; i <= ele.length; i++) {
-    if (!freshArr.has(i)) return i;
+    if (!freshArr.has(i)) return i; //Has
   }
   return -1;
 };
 
 let a = [1, 2, 3, 4, 6];
-console.log(newFun(a));
-console.log(newFun2(a));
+console.log(newFun(a)); // 5
+console.log(newFun2(a)); // 5
 
 ```
 
