@@ -15,6 +15,9 @@
 8. **Prototype और Prototype Chain समझाइए**
 9. **Currying क्या होती है?**
 10. **Memory leak क्या है और कैसे avoid करेंगे?**
+11. **Event Bubbling और Event Propagation में difference**
+12. **`this` keyword कैसे काम करता है? Different contexts में explain करें**
+13. **`call`, `apply`, और `bind` में difference**
 
 ---
 
