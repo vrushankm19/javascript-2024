@@ -57,11 +57,13 @@ triple(5);  // 15
 ```js
 function outer() {
   let x = 10;
-  return () => x;
+  return () => x++;
 }
 
 const fn = outer();
 fn(); // 10
+fn(); // 11
+fn(); // 12
 ```
 
 > Outer function khatam hone ke baad bhi `x` alive hai → closure
@@ -96,5 +98,13 @@ fn(); // 10
 > **Closure = function + lexical scope**
 > **Closure outer variables ko memory me preserve karta hai**
 > **Multiple closures ek hi function se ban sakte hain**
+
+---
+
+## 🔥 Simple Rule (Yaad rakhna)
+
+* Closure = function + outer variable access
+* `var` → shared closure (problem)
+* `let` → per-iteration closure (safe)
 
 ---
