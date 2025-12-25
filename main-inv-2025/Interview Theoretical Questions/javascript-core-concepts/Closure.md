@@ -1,6 +1,7 @@
 ## ✅ Core Closure Definition (Final – Yaad rakhne wali)
 
 > **Closure function nahi hota, balki function ke saath uska lexical environment hota hai.**
+> **Closure outer function ke variables ko yaad rakhta hai jab inner function ko call kiya jata hai, chahe outer function ka execution context khatam ho chuka ho.**
 
 **Lexical environment =**
 
