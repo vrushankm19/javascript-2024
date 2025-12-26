@@ -1,10 +1,5 @@
 # JavaScript `async / await` – Interview & Revision Notes
 
-> **Purpose:** Ye notes `async / await` samajhne, revise karne aur interview me confidently explain karne ke liye hain.
-> Language: **Hinglish (easy + practical)**
-
----
-
 ## 1. `async / await` kya hota hai?
 
 `async / await` JavaScript me **Promises ko handle karne ka modern aur readable tarika** hai.
