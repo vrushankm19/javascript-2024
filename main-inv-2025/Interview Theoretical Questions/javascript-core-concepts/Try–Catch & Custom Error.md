@@ -1,9 +1,5 @@
 # JavaScript Try–Catch & Custom Error (Interview Notes)
 
-> **Purpose:** Ye notes aap revise karne ke liye aur interview me explain karne ke liye banaye gaye hain. Language: **Hinglish** (easy to remember).
-
----
-
 ## 1. Try–Catch–Finally kya hota hai?
 
 JavaScript me **try–catch** ka use runtime errors ko handle karne ke liye hota hai, taaki program crash na ho.
@@ -25,6 +21,8 @@ try {
 ## 2. Aapka Example Code (Samjha hua)
 
 ```js
+// Tips let a = +prompt("Enter first number"); apko pars
+
 let a = prompt("Enter first number")
 let b = prompt("Enter second number")
 
