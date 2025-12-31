@@ -325,5 +325,107 @@ let newFun = (ele) => {
 let a = "Vrushank";
 console.log(newFun(a));
 
+---
+
+// ### 12️⃣ String **palindrome है या नहीं**
+
+// 👉 methods: `split()`, `reverse()`
+
+let newFun = (ele) => {
+  let lowerCaseData = ele.toLowerCase();
+  let data = lowerCaseData.split("").reverse().join("");
+  return data == lowerCaseData;
+}
+
+let a = "new";
+console.log(newFun(a));
+
+==
+let newFun = (ele) => {
+  let lowerCaseData = ele.toLowerCase();
+  let newData = ""
+  for (let i = lowerCaseData.length - 1; i >= 0; i--) {
+    newData = newData + lowerCaseData[i];
+  }
+  return newData == lowerCaseData;
+}
+
+let a = "mom";
+console.log(newFun(a));
+
+---
+
+// ### 13️⃣ किसी sentence में **word count**
+
+// 👉 methods: `split()`
+
+let newFun = (ele) => {
+  return ele.split(" ").length;
+}
+
+let a = "Vrushank Modi";
+console.log(newFun(a))
+
+---
+
+// ### 14️⃣ `map()` का use करके array को double करना
+
+let newFun = (ele) => {
+  return ele.map((e) => e * 2);
+}
+
+let a = [1,2,3,4,5,6,7];
+console.log(newFun(a));
+
+---
+
+// ### 15️⃣ `filter()` से positive numbers निकालना
+
+let newFun = (ele) => {
+  return ele.filter((e) => e >= 0);
+}
+
+let a = [-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7];
+console.log(newFun(a))
 
 
+---
+
+// ### 16️⃣ `find()` से first matching value ढूंढना
+
+let newFun = (ele, findData) => {
+  return ele.find((e) => findData === e) ? true : false;
+}
+
+let a = [13,17,83,65,88];
+console.log(newFun(a,65));
+
+---
+
+// ### 17️⃣ `includes()` से value exist करती है या नहीं check करना
+
+let newFun = (ele, findData) => {
+  return ele.includes(findData);
+}
+
+let a = [13,17,83,65,88];
+console.log(newFun(a,66));
+
+---
+
+// ### 18️⃣ **Swap two numbers**
+
+
+let a = 10;
+let b = 20;
+let c;
+
+// c = a;
+// a = b;
+// b = c;
+
+a = a + b;
+b = a - b;
+a = a - b;
+
+console.log(`A is: ${a} |B is: ${b} |C is: ${c}`)
