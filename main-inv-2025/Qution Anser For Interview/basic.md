@@ -429,3 +429,56 @@ b = a - b;
 a = a - b;
 
 console.log(`A is: ${a} |B is: ${b} |C is: ${c}`)
+
+---
+
+// ### 19️⃣ **Missing number in array**
+
+let newFun = (data,n) => {
+  // let ans = 0
+  // for (let i = 0; i < data.length; i++) {
+  //   !data.includes(i+1) ? ans = i+1 : 0;
+  // }
+  // return ans
+  
+  return n * (n + 1) / 2 - data.reduce((a,b) => a + b);
+}
+
+let a = [1,2,3,4,5,7];
+console.log(newFun(a,7));
+
+---
+
+// ### 20️⃣ **Second largest number** निकालना
+
+let newFun = (data) => {
+  // let ans = data[0];
+  // let newArr = [];
+  // let newArr2 = []
+  // for (let i = 0; i < data.length; i++) {
+  //     if(ans < data[i]){
+  //       ans = data[i]; 
+  //     } else{
+  //       newArr.push(data[i])
+  //     }
+  // }
+  // let ans2 = newArr[0];
+  // for (let i = 0; i < newArr.length; i++) {
+  //     if(ans2 < newArr[i]){
+  //       ans2 = newArr[i]; 
+  //     } else{
+  //       newArr2.push(newArr[i])
+  //     }
+  // }
+  
+  // return ans2;
+  
+  let newArr = [...new Set(data)];
+  let ans = newArr.sort((a,b) => b - a);
+  return ans[1];
+}
+
+let a = [1,7,2,3,4,5,6];
+console.log(newFun(a));
+
+--

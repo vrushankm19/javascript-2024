@@ -174,6 +174,3 @@ Promise.race([promise1, promise2])
 👉 Fir **async/await** mention karo
 
 ---
-
-📌 **Ye file aap revision + interview dono ke liye use kar sakte ho**
----
