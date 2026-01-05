@@ -87,6 +87,9 @@
 ---
 
 ```javascript
+
+// 1️⃣ Array में Maximum और Minimum value निकालना
+
 let newFun = (ele) => {
   let dataMax = dataMin = ele[0];
   for (let i = 0; i <= ele.length; i++) {
