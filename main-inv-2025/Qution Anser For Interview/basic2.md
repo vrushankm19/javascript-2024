@@ -138,3 +138,47 @@
 भी बना सकता हूँ
 
 बस बताओ अगला step क्या चाहिए 😄
+
+```javascript
+
+// 1️⃣ Array में frequency count निकालना
+// 👉 { element: count } object बनाना
+
+let newFun = (data) => {
+  let ans = {}
+  for (let i = 0; i < data.length; i++) {
+    // console.log(ans);
+    ans[data[i]] ? ans[data[i]]++ : ans[data[i]] = 1;  
+  }
+  return ans;
+}
+
+let a = [1, 2, 2, 3, 1, 2];
+console.log(newFun(a)); // { '1': 2, '2': 3, '3': 1 }
+```
+
+```javascript
+
+// ### 2️⃣ Array को **rotate** करना (left / right)
+// 👉 without extra array
+
+let newFun = (data) => {
+  // let ans = data[0]; // left rotate
+  // for (let i = 0; i < data.length - 1; i++) {
+  //   data[i] = data[i + 1]
+  // }
+  // data[data.length - 1] = ans;
+  
+  let ans = data[data.length - 1]; // right rotate
+  for (let i = data.length - 1; i > 0; i--) {
+    data[i] = data[i - 1]
+  }
+  data[0] = ans;
+  return data;
+}
+
+let a = [1, 2, 3, 4, 5];
+console.log(newFun(a));
+```
+
+```javascript
