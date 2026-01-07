@@ -182,3 +182,50 @@ console.log(newFun(a));
 ```
 
 ```javascript
+
+// ### 3️⃣ Array में **common elements** निकालना
+// 👉 two arrays compare करना
+
+let newFun = (a1,a2) => {
+  // let ans = [];
+  // for (let i = 0; i < a1.length; i++) {
+  //   for (let j = 0; j < a2.length; j++) {
+  //     if(a1[i] == a2[j]){
+  //       ans.push(a1[i]);
+  //       break;
+  //     }
+  //   }
+  // }
+  
+  // for (let i = 0; i < a1.length; i++) {
+  //   if(a2.includes(a1[i])){
+  //     ans.push(a1[i]);
+  //   }
+  // }
+  
+  let ans = a1.filter((ele,ind) => a2.includes(a1[ind]));
+  return ans;
+}
+
+
+
+let arr1 = [1, 2, 3, 4, 5];
+let arr2 = [3, 4, 5, 6, 7];
+console.log(newFun(arr1,arr2));
+```
+
+```javascript
+
+// ### 4️⃣ Array में **unique + duplicate values** अलग-अलग करना
+
+let newFun = (data) => {
+  let duplicate = [...new Set(data.filter((ele, ind) => data.indexOf(ele) !== ind))];
+  let unique = data.filter((ele, ind) => data.indexOf(ele) === data.lastIndexOf(ele));
+  return [duplicate, unique];
+}
+
+let a = [1, 1, 1, 2, 2, 3];
+console.log(newFun(a)); // [[1,2], [3]]
+```
+
+```javascript
