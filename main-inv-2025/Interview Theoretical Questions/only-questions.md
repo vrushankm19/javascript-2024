@@ -95,6 +95,3 @@
 4. **Disagreement with backend / manager कैसे handle करते हैं?**
 5. **Why should we hire you as a senior developer?**
 
----
-
-
