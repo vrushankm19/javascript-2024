@@ -389,7 +389,7 @@ console.log(person.sayHello()); // Output: Hello, undefined undefined
 
 ### Bind, Call, and Apply
 
-#### bind
+#### bind (Returns a New Function)
 - **Usage**: Creates a new function with the bound context.
 ```javascript
 const person = {
@@ -403,7 +403,7 @@ const sayHello = person.greet.bind(person);
 console.log(sayHello()); // Output: Hello, John
 ```
 
-#### call
+#### call (On The Spot Invocation)
 - **Usage**: Immediately calls the function with the specified context.
 ```javascript
 const person = {
@@ -417,7 +417,7 @@ const greeting = person.greet.call(person);
 console.log(greeting); // Output: Hello, John
 ```
 
-#### apply
+#### apply (On The Spot Invocation with Array)
 - **Usage**: Immediately calls the function with the specified context and arguments as an array.
 ```javascript
 const person = {

@@ -8,7 +8,9 @@ A structured collection of important JavaScript concepts for interviews and real
 
 ### 🔹 Core JavaScript
 
-- 📄 **[Closures](./Closure.md)**  
+- 📄 **[Closures](./Closure.md)**
+
+- 📄 **[Hoisting](./Hosting.md)**
 
 - 📄 **[Fetch API](./Fetch%20API.md)**  
 
@@ -17,6 +19,14 @@ A structured collection of important JavaScript concepts for interviews and real
 - 📄 **[Async / Await](./Async%20&%20Await.md)** 
 
 - 📄 **[Promises](./Promise.md)**
+
+- 📄 **[Promise.all()](./PromiseAll.md)**
+
+- 📄 **[Debouncing & Throttling](./Debouncing%20%26%20Throttling.md)**
+
+- 📄 **[Event Loop & Callbacks](./Event%20Loop%20&%20Callbacks.md)**
+
+
 
 ---
 
