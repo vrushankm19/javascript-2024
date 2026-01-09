@@ -27,6 +27,13 @@ A structured collection of important JavaScript concepts for interviews and real
 - 📄 **[Event Loop & Callbacks](./Event%20Loop%20&%20Callbacks.md)**
 
 
+## React Core Concepts
+
+- 📄 **[React Component Lifecycle](../javascript-core-concepts/index⭐.md)**
+
+
+
+
 
 ---
 

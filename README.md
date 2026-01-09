@@ -17,4 +17,12 @@
     alt="Array Methods Aggregated"
   />
 
+**Redux क्या है? Redux Flow समझाइए।**
+
+<img 
+    src="https://redux.js.org/assets/images/ReduxDataFlowDiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif"
+    width="800"
+    alt="Redux Flow"
+  />
+
 ** Javascript: Array methods cheatsheet https://igorgo.nl/article/js-arrays-cheatsheet **
