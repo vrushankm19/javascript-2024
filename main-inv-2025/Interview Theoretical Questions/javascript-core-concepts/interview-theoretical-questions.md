@@ -551,7 +551,7 @@ IIFEs are used to:
 // Output: Hello, John
 ```
 
-## Event Bubbling
+## Event Bubbling (child to parent)
 
 ### Definition
 Event bubbling is a phenomenon in which an event triggered on a nested element is also triggered on its parent elements all the way up to the document root.
@@ -576,7 +576,7 @@ document.getElementById('list').addEventListener('click', function(event) {
 </script>
 ```
 
-## Event Capturing
+## Event Capturing (parent to child)
 
 ### Definition
 Event capturing is the reverse of event bubbling. It involves capturing the event as it travels down the DOM hierarchy, from the document root to the target element.
