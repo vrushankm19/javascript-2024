@@ -160,12 +160,12 @@ To **diagram + example** bolna start karo — instant positive impact 👍
 
 ---
 
-Agar chaho to:
+**Redux क्या है? Redux Flow समझाइए।**
 
-* **Redux vs Context**
-* **Redux Toolkit deep dive**
-* **Async flow explanation**
-* **Machine coding Redux app**
+<img 
+    src="https://redux.js.org/assets/images/ReduxDataFlowDiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif"
+    width="800"
+    alt="Redux Flow"
+  />
 
-bhi karwa deta hoon.
-Bas bolo 💪
+** Javascript: Array methods cheatsheet https://igorgo.nl/article/js-arrays-cheatsheet **
