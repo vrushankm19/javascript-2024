@@ -4,6 +4,11 @@
 
 **Event Loop क्या है? Call Stack, Microtask Queue और Callback Queue समझाइए**
 
+<!-- https://github.com/vrushankm19/javascript-2024/tree/main/main-inv-2025/Interview%20Theoretical%20Questions -->
+
+https://github.com/vrushankm19/javascript-2024/tree/main/main-inv-2025/Interview%20Theoretical%20Questions
+
+
 ![Interview Questions](https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffkrzbiehk7k89btxtqzm.gif)
 
 **Array All Methods Cheat Sheet**
