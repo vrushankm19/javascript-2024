@@ -9,6 +9,7 @@ TypeScript ek **superset of JavaScript** hai, jo Microsoft ne banaya hai. Iska m
 
 Simple words me: **TypeScript = JavaScript + Types**
 
+
 ---
 
 ## 2. TypeScript Kyun Use Karte Hain?
