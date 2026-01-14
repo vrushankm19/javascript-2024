@@ -229,3 +229,30 @@ console.log(newFun(a)); // [[1,2], [3]]
 ```
 
 ```javascript
+
+// ### 5️⃣ Array को **chunks** में divide करना
+
+// 👉 size given होगा (e.g. 2, 3)
+
+let newFun = (data, length) => {
+  let ans = [];
+  for (let i = 0; i < data.length; i += length) {
+    let temp = [];
+    console.log(i, i + size);
+    for (let j = i;j < i + size && j < data.length; j++) {
+      temp.push(data[j]);
+      
+    }
+    ans.push(temp);
+  }
+  return ans;
+}
+
+let arr = [1, 2, 3, 4, 5, 6, 7];
+let size = 3;
+console.log(newFun(arr, size));
+
+```
+
+```javascript
+
