@@ -142,3 +142,6 @@ doA(() => {
 **Event Loop क्या है? Call Stack, Microtask Queue और Callback Queue समझाइए**
 
 ![Interview Questions](https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffkrzbiehk7k89btxtqzm.gif)
+
+https://frontendly.io/blog/call-stack-execution-context
+<img style="background: white; padding: 50px;" width="1200" src="https://frontendly.io/_next/image?url=https%3A%2F%2Fmedia.frontendly.io%2Fassets%2Fuploads%2F2024%2F04%2F23052013%2Fcall-stack-execution-context.png&w=1920&q=75" alt="Event Loop Explanation" />
