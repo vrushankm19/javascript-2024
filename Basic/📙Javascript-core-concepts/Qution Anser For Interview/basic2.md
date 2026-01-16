@@ -255,4 +255,27 @@ console.log(newFun(arr, size));
 ```
 
 ```javascript
+## 6️⃣ Array in remove false values ##
 
+let newFun = (data) => {
+  let ans = [];
+  for(let i = 0;i < data.length;i++){
+    let anstf = false;
+    for(let j = 0;j < ans.length;j++){
+      if(data[i] == ans[j]){
+        anstf = true;
+        break
+      }
+    }
+    if(!anstf){
+      ans.push(data[i]);
+    }
+  }
+  return ans;
+}
+
+let a = [1,2,3,1,2,4,5,4];
+console.log(newFun(a))
+
+// Output: [1,2,3,4,5]
+```
