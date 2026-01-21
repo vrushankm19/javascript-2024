@@ -338,43 +338,63 @@ useEffect(() => {
 
 ---
 
-## Example: async/await with Custome Promise
+## 🔹 Example 1: async/await with Custom Promise (Error Handling ke sath) ##
 
 ```javascript
+// Custom Promise banaya ja raha hai
+// success = true hoga to resolve
+// success = false hoga to reject
 const newPms = new Promise((resolve, reject) => {
   let success = true;
-  if(success){
-    resolve({id: 1, name: "Vrushank"})
+
+  if (success) {
+    resolve({ id: 1, name: "Vrushank" });
   } else {
     reject("Error...");
   }
-})
-
-const getData = async () => {
-  try {
-    let data = await newPms;
-    return data;
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-const main = async () => {
-  let ans = await getData();
-  console.log(ans)
-}
-
-main();
-```
-## Make a sleep function that delays execution for a given number of milliseconds
-
-```javascript
-let t = Date.now();
-sleep(100).then(() => {
-  console.log(Date.now() - t); // 100
 });
 
-async function sleep(mini) {
-  return new Promise(resolve => setTimeout(resolve, mini))
+// async function jo Promise se data fetch karta hai
+// try/catch error handle karne ke liye
+const getData = async () => {
+  try {
+    const data = await newPms; // Promise resolve hone ka wait
+    return data;               // resolved data return
+  } catch (error) {
+    console.log(error);        // agar error aaye to print
+  }
+};
+
+// async function jaha getData() ko call kiya ja raha hai
+const main = async () => {
+  const ans = await getData(); // getData() ka result wait karo
+  console.log(ans);            // final output print
+};
+
+// Program execution start
+main();
+```
+
+---
+
+## 🔹 Example 2: sleep() Function – Execution Delay ke liye ##
+
+```javascript
+// Current time store kar rahe hain
+let startTime = Date.now();
+
+// sleep function call (100 ms delay)
+sleep(100).then(() => {
+  // Kitna time delay hua wo print hoga
+  console.log(Date.now() - startTime); // ~100 ms
+});
+
+// sleep function
+// Ye ek Promise return karta hai jo given time ke baad resolve hota hai
+async function sleep(milliseconds) {
+  return new Promise(resolve => {
+    setTimeout(resolve, milliseconds); // delay create
+  });
 }
 ```
+
