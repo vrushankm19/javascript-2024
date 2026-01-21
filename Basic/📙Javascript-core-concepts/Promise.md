@@ -338,15 +338,43 @@ useEffect(() => {
 
 ---
 
+## Example: async/await with Custome Promise
+
+```javascript
+const newPms = new Promise((resolve, reject) => {
+  let success = true;
+  if(success){
+    resolve({id: 1, name: "Vrushank"})
+  } else {
+    reject("Error...");
+  }
+})
+
+const getData = async () => {
+  try {
+    let data = await newPms;
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+const main = async () => {
+  let ans = await getData();
+  console.log(ans)
+}
+
+main();
 ```
+## Make a sleep function that delays execution for a given number of milliseconds
 
----
+```javascript
+let t = Date.now();
+sleep(100).then(() => {
+  console.log(Date.now() - t); // 100
+});
 
-If you want next:
-- 📄 **PDF version**
-- 🧠 **1-page Promise Cheat Sheet**
-- 🖼 **Diagram-based explanation**
-- 🎤 **Mock interview Q&A on Promises**
-
-Just tell me 👍
+async function sleep(mini) {
+  return new Promise(resolve => setTimeout(resolve, mini))
+}
 ```
