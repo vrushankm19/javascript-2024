@@ -1,6 +1,3 @@
-Here's the revised Markdown file with correct titles for each code snippet:
-
-```markdown
 # JavaScript Code Snippets
 
 ### HTML and JavaScript Example

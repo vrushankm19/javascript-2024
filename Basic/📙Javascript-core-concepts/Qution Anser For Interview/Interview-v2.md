@@ -1,9 +1,3 @@
-Below is a **clean, properly ordered, clearly separated, easy-to-read `README.md`** with sections and each code snippet grouped neatly.
-
-You can copy/paste it directly as your new file. ✅
-
----
-
 ## 📌 1. Array Operations
 
 ## 1.1 Find Pairs That Sum to a Target

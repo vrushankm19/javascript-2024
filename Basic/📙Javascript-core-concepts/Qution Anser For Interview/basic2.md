@@ -1,9 +1,3 @@
-बहुत बढ़िया 👍
-ये basics complete करने के बाद अब **next-level practice list** चाहिए ताकि logic, arrays, strings और real-world JS समझ और strong हो जाए।
-नीचे **नई list** है — कोई repeat नहीं, difficulty धीरे-धीरे बढ़ेगी 🔥
-
----
-
 # 🚀 JavaScript Practice Programs – Next Level
 
 ## 🔹 Array Logic (Intermediate)

@@ -95,3 +95,137 @@
 4. **Disagreement with backend / manager कैसे handle करते हैं?**
 5. **Why should we hire you as a senior developer?**
 
+## New Qutions Added Recently ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# 🔥 React + Frontend Interview Questions (JD Based – Hinglish)
+
+## ⚛️ React Core (MOST IMPORTANT)
+
+1. React ka architecture explain karo
+2. Functional components vs Class components
+3. React reconciliation kya hota hai?
+4. Virtual DOM kya hai aur kaise kaam karta hai?
+5. React me re-render kab hota hai?
+6. Props aur State me difference
+7. Controlled vs Uncontrolled components
+8. Keys React me kyun important hote hain?
+9. React lifecycle methods (functional component perspective se)
+10. `useState` aur `useEffect` ka internal working
+
+---
+
+## ⚡ Hooks (VERY HIGH CHANCE)
+
+11. React hooks kya hote hain?
+12. `useEffect` ke different use-cases batao
+13. `useEffect` cleanup function kya hota hai?
+14. `useMemo` vs `useCallback` (real example ke saath)
+15. `useRef` kyun use karte hain?
+16. Custom hooks kya hote hain? Kab use karte hain?
+17. `useReducer` vs `useState`
+18. Hook rules kya hote hain?
+
+---
+
+## 🧠 Performance Optimization (JD MATCH 🔥)
+
+19. React app optimize kaise karte ho?
+20. Unnecessary re-render kaise avoid karte ho?
+21. Code splitting kya hai?
+22. Lazy loading kaise implement karte ho?
+23. React.memo kya karta hai?
+24. Large list rendering ko kaise optimize karoge?
+25. Image optimization techniques batao
+26. Lighthouse / DevTools ka use kaise karte ho?
+
+---
+
+## 🔄 State Management (Redux + Context)
+
+27. Redux kya hai? Kyun use karte hain?
+28. Redux flow explain karo
+29. Redux vs Context API
+30. Redux middleware kya hota hai?
+31. Redux Toolkit ke benefits
+32. Async API calls Redux me kaise handle karte ho?
+33. Props drilling kya hai? Kaise solve karte ho?
+
+---
+
+## 🧩 JavaScript (ADVANCED LEVEL)
+
+34. `var`, `let`, `const` difference
+35. Closures kya hote hain? Real use case
+36. Hoisting kya hoti hai?
+37. Event bubbling aur capturing
+38. Debouncing vs Throttling
+39. `map`, `filter`, `reduce` difference
+40. Shallow copy vs Deep copy
+41. `async/await` vs Promises
+42. Error handling JS me kaise karte ho?
+
+---
+
+## 🧪 Testing (JD Mentioned)
+
+43. Unit testing kya hoti hai?
+44. React component test kaise karte ho?
+45. Jest aur React Testing Library ka use
+46. Code coverage kya hota hai?
+47. Snapshot testing kya hai?
+
+---
+
+## 🎨 HTML / CSS / UI
+
+48. Semantic HTML kya hota hai?
+49. Flexbox vs Grid
+50. Responsive design kaise implement karte ho?
+51. Cross-browser compatibility kaise ensure karte ho?
+52. MUI (Material UI) ka use kaise karte ho?
+53. CSS optimization techniques
+
+---
+
+## 🧱 Build Tools (Vite + Webpack)
+
+54. Vite kya hai? Webpack se better kyun hai?
+55. Bundling kya hoti hai?
+56. Tree shaking kya hai?
+57. Environment variables React me kaise use karte ho?
+
+---
+
+## 🐳 DevOps Basics (JD MATCH)
+
+58. Docker kya hai? Frontend me kyun use hota hai?
+59. Dockerfile kya hoti hai?
+60. AWS/Azure me frontend kaise deploy karte ho?
+61. CI/CD pipeline ka basic flow
+
+---
+
+## 🔧 Git / GitHub
+
+62. Git workflow explain karo
+63. Git rebase vs merge
+64. Conflict kaise resolve karte ho?
+65. Code review process kaise karte ho?
+
+---
+
+## 👥 Leadership / Behavioural (IMPORTANT for 4–7 yrs)
+
+66. Junior developers ko guide kaise karte ho?
+67. Code quality kaise ensure karte ho?
+68. Agile/Scrum me kaise kaam karte ho?
+69. Requirement unclear ho to kya karte ho?
+70. Client ke saath technical discussion kaise handle karte ho?
+
+---
+
+## 🎯 MOST IMPORTANT INTERVIEW TIP (JD MATCHED)
+
+> **Project explanation + Optimization + Decision making** pe maximum focus rakho
+> 4–7 yrs me *“kaam aata hai”* se zyada *“kyun kiya”* important hota hai
+

@@ -1,6 +1,3 @@
-Sure! Below is the updated `README.md` file with code snippets grouped by their context: arrays, objects, functions, and string manipulations. 
-
-```markdown
 # JavaScript Code Snippets
 
 ## Array Operations
