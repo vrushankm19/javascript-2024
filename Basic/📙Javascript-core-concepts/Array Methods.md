@@ -51,6 +51,7 @@
 
 | Method       | Kaam           | Change Array? | Example          |
 | ------------ | -------------- | ------------- | ---------------- |
+| `split()` | String ko array me todta | ❌ No | `"a,b,c".split(",")` |
 | `sort()`     | Sort           | ✅ Yes         | `arr.sort()`     |
 | `reverse()`  | Reverse        | ✅ Yes         | `arr.reverse()`  |
 | `join()`     | String banana  | ❌ No          | `arr.join(",")`  |
@@ -76,15 +77,6 @@
 
 ---
 
-Agar aap chaho to main:
-
-* ✅ **Java + Python array methods** ka bhi table
-* ✅ **Only 10 most asked interview Q&A**
-* ✅ **PDF / Notion style notes**
-
-bhi bana deta hoon. Batao 👍
-
----
 
 **Array All Methods Cheat Sheet**
 //add width
