@@ -144,6 +144,10 @@ let newFun = (data) => {
     // console.log(ans);
     ans[data[i]] ? ans[data[i]]++ : ans[data[i]] = 1;  
   }
+
+  // for (let key in ans) {            // option 2
+  //   ans[key] = (ans[key] || 0) + 1;
+  // }
   return ans;
 }
 
@@ -274,4 +278,56 @@ console.log(newFun(a))
 // Output: [1,2,3,4,5]
 ```
 
+```javascript
 
+### 8️⃣ **Flatten array**
+
+👉 `[1, [2, [3, 4]]] → [1,2,3,4]`
+
+let newFun = (data) => {
+  let ans = [];
+  for(let i = 0;i < data.length;i++){
+    // console.log(data[i]);
+    if(Array.isArray(data[i])){
+      ans.push(...newFun(data[i]));
+    } else{
+     ans.push(data[i]); 
+    }
+  }
+  return ans;
+}
+
+let a = [1,2,3,[4,[5,6,[7]]]];
+console.log(newFun(a));
+
+// Output: [1,2,3,4,5,6,7]
+```
+
+```javascript
+
+// ### 9️⃣ String में **most repeated character**
+let newFun = (data) => {
+  let newObj = {}
+  for (let prop of data) {
+    newObj[prop] = (newObj[prop] || 0) + 1;
+  }
+  
+  let countAlph = 0;
+  let alphMain = "";
+  
+  for (let prop in newObj) {
+    if(countAlph < newObj[prop]){
+      countAlph = newObj[prop];
+      alphMain = prop
+    }
+  }
+  return `count is : ${countAlph} Alphbet is ${alphMain}`;
+}
+
+let str = "programminggg";
+console.log(newFun(str))
+
+// Output: count is : 4 Alphbet is g
+```
+
+```javascript
