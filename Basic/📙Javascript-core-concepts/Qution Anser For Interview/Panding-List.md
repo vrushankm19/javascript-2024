@@ -8,7 +8,3 @@ ______________________________________________
 
 login functioality with tokan
 
-protected route
-
-reavt enitilization
-use efect in async awit

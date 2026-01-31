@@ -331,3 +331,61 @@ console.log(newFun(str))
 ```
 
 ```javascript
+
+// ### 🔟 String से **special characters हटाना**
+
+let str = "He@llo! Wo#rld$ 123";
+let cleanStr = str.replace(/[^a-zA-Z0-9 ]/g, "");
+
+console.log(cleanStr);
+
+// Output: Hello World 123
+```
+
+```javascript
+// ### 1️⃣1️⃣ String के हर word का **first letter capital**
+
+function newFun(data) {
+  let ans = data.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
+  // let ans = data.split(" ").map(word => word[0].toUpperCase() + word.slice(1)).join(" ")
+  return ans
+}
+
+let a = "vrushank modi";
+console.log(newFun(a));
+
+// Output: Vrushank Modi
+```
+
+```javascript
+// ### 1️⃣2️⃣ String में **character frequency**
+
+function newFun(data) {
+  let ans = {};
+  for(let i of data.toLowerCase()){
+    ans[i] = (ans[i] || 0) + 1;
+  }
+  return ans;
+}
+
+let a = "AaaaBaCcc";
+console.log(newFun(a))
+// Output: { a: 5, b: 1, c: 3 }
+```
+```javascript
+// ### 1️⃣3️⃣ **Longest word** in sentence [अगर input में कोई specific character दिया जाए (जैसे ‘a’), तो सिर्फ उसी का count return करो]
+
+function newFun(data, alphFind) {
+  let ans = {};
+  for(let inValue of data.toLowerCase()){
+    if(inValue == " ") continue;
+    ans[inValue] = (ans[inValue] || 0) + 1;
+  }
+  return ans;
+}
+
+let a = "Vrushank vru rrrrrrr";
+console.log(newFun(a, " "))
+
+// Output: { v: 2, r: 9, u: 2, s: 1, h: 1, a: 2, n: 1, k: 1 }
+```
