@@ -8,3 +8,6 @@ ______________________________________________
 
 login functioality with tokan
 
+azure or cicd
+jest testing
+
