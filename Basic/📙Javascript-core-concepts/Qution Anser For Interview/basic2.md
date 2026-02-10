@@ -389,3 +389,65 @@ console.log(newFun(a, " "))
 
 // Output: { v: 2, r: 9, u: 2, s: 1, h: 1, a: 2, n: 1, k: 1 }
 ```
+
+```javascript
+// ### 1️⃣5️⃣ String को **toggle case**
+// 👉 `HeLLo → hEllO`
+
+function newFun(data) {
+  return data.split("").map(ele => ele === ele.toUpperCase() ? ele.toLowerCase() : 0 || ele === ele.toLowerCase() ? ele.toUpperCase(): 0).join("")
+}
+
+console.log(newFun("kuPi"));
+
+// Output: KUpI
+```
+
+``` javascript
+
+// function newFun(...ele){
+//   if(!ele.some(ele => ele < 35)){
+//     let studTotal = ele.reduce((a,b) => a + b);
+//     let mainTotal = 100 * ele.length;
+//     let  = ""
+//     if(350 < studTotal){
+//       result = "A";
+//     } else if(250 < studTotal){
+//       result = "B";
+//     } else if(140 < studTotal){
+//       result = "C";
+//     } 
+//   } else {
+//     result = "Fail";
+//   }
+//   return result;
+// }
+function newFun(...ele){
+  let markTest = ele.some(ele => ele < 35);
+  let result = "";
+  
+  if(!markTest){
+    let studTotal = ele.reduce((a,b) => a + b);
+    let mainTotal = 100 * ele.length;
+    
+    switch(!markTest){
+      case 350 < studTotal:
+      result = "A";
+      break;
+      
+      case 250 < studTotal:
+      result = "B";
+      break;
+      
+      default:
+      result = "C";
+    } 
+  } else {
+    result = "Fail";
+  }
+  return result;
+}
+console.log(newFun(100,90,55,35));
+
+// Output: A
+```
