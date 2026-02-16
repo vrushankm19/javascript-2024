@@ -451,3 +451,46 @@ console.log(newFun(100,90,55,35));
 
 // Output: A
 ```
+
+``` JavaScript
+
+function newFun(data) {
+  let current = "";
+  let longest = "";
+
+  for (let i = 0; i < data.length; i++) {
+    if (current.includes(data[i])) {
+      // console.log(current.indexOf(data[i]), 1)
+      current = current.slice(current.indexOf(data[i]) + 1);
+      // console.log(current)
+    }
+    current += data[i];
+    console.log(current, longest);
+    if (current.length > longest.length) {
+      longest = current;
+    }
+    
+  }
+  return longest;
+}
+
+let a = "aabsbscdeas";
+console.log(newFun(a)); // Output: "bscdea"
+
+```
+
+``` JavaScript
+function newFun(data,fd,cz) {
+  return data.map(ele => ele === fd ? ele = cz : ele);
+}
+function addFun(data,fd,cz) {
+  let index = data.indexOf(fd);
+  data.splice(index + 1,0,cz);
+  return data;
+}
+
+let a = [1,2,3,4,5,6,7];
+// console.log(newFun(a,2,10)) // find
+console.log(addFun(a,5,10))
+// Output: [1, 2, 3, 4, 5, 10, 6, 7]
+```
