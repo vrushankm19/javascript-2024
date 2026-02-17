@@ -213,42 +213,11 @@ useQuery({
 👉 Cache & background refetch mention karna
 👉 Redux se compare karna
 
-<style>
-    section {
-      margin-bottom: 20px;
-    }
-
-    .divider {
-      display: flex;
-      align-items: center;
-      margin: 40px 0;
-      color: #000;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .divider::before,
-    .divider::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background-color: #d0d7de;
-    }
-
-    .divider span {
-      padding: 6px 12px;
-      margin: 0 12px;
-      background-color: #f6f8fa;
-      border: 1px solid #d0d7de;
-      border-radius: 4px;
-    }
-  </style>
-
-
-  <div class="divider">
-    <span>🆕 New Section</span>
-  </div>
-
+<div style="display:flex; align-items:center; margin:30px 0;">
+  <div style="flex:1; height:1px; background:#ccc;"></div>
+  <span style="padding:0 10px; font-weight:bold; font-size:20px; background:#f0f8ff; color:#57606a;">🆕 New Section</span>
+  <div style="flex:1; height:1px; background:#ccc;"></div>
+</div>
 
 ## React Project ##
 
