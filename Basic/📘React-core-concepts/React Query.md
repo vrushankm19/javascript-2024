@@ -213,11 +213,9 @@ useQuery({
 👉 Cache & background refetch mention karna
 👉 Redux se compare karna
 
-<div style="display:flex; align-items:center; margin:30px 0;">
-  <div style="flex:1; height:1px; background:#ccc;"></div>
-  <span style="padding:0 10px; font-weight:bold; font-size:20px; background:#f0f8ff; color:#57606a;">🆕 New Section</span>
-  <div style="flex:1; height:1px; background:#ccc;"></div>
-</div>
+<p align="center">
+  <sub>────────────  NEW SECTION  ────────────</sub>
+</p>
 
 ## React Project ##
 
