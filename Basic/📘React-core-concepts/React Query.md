@@ -212,3 +212,137 @@ useQuery({
 👉 "Server State" term use karna
 👉 Cache & background refetch mention karna
 👉 Redux se compare karna
+
+<style>
+    section {
+      margin-bottom: 20px;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 40px 0;
+      color: #000;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background-color: #d0d7de;
+    }
+
+    .divider span {
+      padding: 6px 12px;
+      margin: 0 12px;
+      background-color: #f6f8fa;
+      border: 1px solid #d0d7de;
+      border-radius: 4px;
+    }
+  </style>
+
+
+  <div class="divider">
+    <span>🆕 New Section</span>
+  </div>
+
+
+## React Project ##
+
+Aapka code abhi sirf `App` render kar raha hai.
+React Query use karne ke liye aapko `QueryClientProvider` wrap karna padega.
+
+Aap **TypeScript (App.tsx)** use kar rahe ho, isliye proper setup neeche diya hai 👇
+
+---
+
+## ✅ Step 1: Install React Query
+
+```bash
+npm install @tanstack/react-query
+```
+
+---
+
+## ✅ Step 2: `main.tsx` update karo
+
+```tsx
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import "./index.css";
+import App from "./App";
+
+const queryClient = new QueryClient();
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
+  </StrictMode>
+);
+```
+
+---
+
+## ✅ Step 3: `App.tsx` me API call (Only React Query + fetch)
+
+```tsx
+import { useQuery } from "@tanstack/react-query";
+
+type Post = {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+};
+
+const fetchPosts = async (): Promise<Post[]> => {
+  const response = await fetch(
+    "https://jsonplaceholder.typicode.com/posts"
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch posts");
+  }
+
+  return response.json();
+};
+
+function App() {
+  const { data, isLoading, error } = useQuery<Post[]>({
+    queryKey: ["posts"],
+    queryFn: fetchPosts,
+  });
+
+  if (isLoading) return <h2>Loading...</h2>;
+  if (error instanceof Error) return <h2>Error: {error.message}</h2>;
+
+  return (
+    <div>
+      <h1>Posts List</h1>
+      {data?.map((post) => (
+        <div key={post.id} style={{ marginBottom: "20px" }}>
+          <h3>{post.title}</h3>
+          <p>{post.body}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+## 🎯 Ab kya hoga?
+
+* React Query automatic caching karega
+* Refetch karega jab window focus hogi
+* Loading & error state manage karega
+* TypeScript properly typed hai

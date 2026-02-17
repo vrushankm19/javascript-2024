@@ -68,6 +68,23 @@ setCount(count + 1);
 
 ---
 
+## 🔟 Reconciliation Process kya hota hai?
+
+Reconciliation wo process hai jisme React:
+
+1. New Virtual DOM banata hai
+2. Previous Virtual DOM se compare karta hai (diffing algorithm)
+3. Minimum changes identify karta hai
+4. Real DOM update karta hai
+
+Key concept:
+
+* React same type element ko update karta hai
+* Different type element ho to pura subtree re-render hota hai
+* Keys list items ke liye important hain
+
+---
+
 ### 🔥 Important Interview Line
 
 > Reconciliation React ka diffing algorithm hai jo efficiently DOM updates karta hai.

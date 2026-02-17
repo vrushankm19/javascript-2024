@@ -494,3 +494,18 @@ let a = [1,2,3,4,5,6,7];
 console.log(addFun(a,5,10))
 // Output: [1, 2, 3, 4, 5, 10, 6, 7]
 ```
+
+``` JavaScript
+// Find index of element and remove next element
+
+function addFun(data,fd,cz) {
+  let index = data.indexOf(fd);
+  data.splice(index + 1,1);
+  return data;
+}
+
+let a = [1,2,3,4,5,6,7];
+
+console.log(addFun(a,7,10)) // find
+// Output: [1, 2, 3, 4, 5, 6]
+```
