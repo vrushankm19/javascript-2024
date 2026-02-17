@@ -214,8 +214,9 @@ useQuery({
 👉 Redux se compare karna
 
 <p align="center">
-  <sub>────────────  NEW SECTION  ────────────</sub>
+  ──────────── ✨ <strong>NEW SECTION</strong> ✨ ────────────
 </p>
+
 
 ## React Project ##
 
