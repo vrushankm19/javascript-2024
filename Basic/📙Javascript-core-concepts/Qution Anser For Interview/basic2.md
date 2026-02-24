@@ -509,3 +509,55 @@ let a = [1,2,3,4,5,6,7];
 console.log(addFun(a,7,10)) // find
 // Output: [1, 2, 3, 4, 5, 6]
 ```
+
+``` JavaScript
+
+// Object in add, remove, update
+
+function updFun(data,pName,pAge) {
+  for(let i in data){
+    if (data[i].name === pName) {
+      data[i].age = pAge;
+    }
+    // console.log(data[i].name )
+  }
+  return data;
+}
+
+function addFun(data,pObj) {
+  data.push(pObj)
+  return data;
+}
+
+function detFun(data,pName) {
+  return data.filter(ele => ele.name != pName);
+}
+
+let a = [
+  {
+    name: "Vrushank",
+    age: 20,
+    Add: "Pune"
+  },
+  {
+    name: "Kp",
+    age: 20,
+    Add: "Pune"
+  },
+  {
+    name: "Yash",
+    age: 22,
+    Add: "Ahmedabad"
+  }
+]
+// console.log(updFun(a,"Kp",28))
+// console.log(addFun(a,{
+//     name: "Modi",
+//     age: 50,
+//     Add: "Ahmedabad"
+// }))
+console.log(detFun(a,"Kp"))
+
+// Output:
+
+```
