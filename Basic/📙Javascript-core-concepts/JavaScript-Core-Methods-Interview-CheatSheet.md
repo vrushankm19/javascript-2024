@@ -1,65 +1,113 @@
-* ✅ Array
-* ✅ String
-* ✅ Object
+# 🧠 JavaScript Core Methods – Complete Interview Cheat Sheet (5+ Years)
 
-👉 Interview ke time **sirf ek file kholni pade** aur **99% JS method doubts clear** ho jayenge.
-Level: **5+ Years Experience**
-
----
-
-# 🧠 JavaScript Core Methods – Interview Cheat Sheet (5+ Years)
-
-> **Goal:**
-> Ek hi file me JavaScript ke **most-used & interview-important methods**
-> clear table format me — no confusion, no hunting.
+> Goal:
+> Ek hi file me JavaScript ke **Array + String + Object** ke
+> saare important interview methods table format me revise ho jayein.
 
 ---
 
 # 🔥 ARRAY METHODS
 
-## 🔹 Add / Remove
+---
 
-| Method      | Kya karta hai   | Mutates? | Example          |
-| ----------- | --------------- | -------- | ---------------- |
-| `push()`    | End me add      | ✅ Yes    | `arr.push(5)`    |
-| `pop()`     | End se remove   | ✅ Yes    | `arr.pop()`      |
-| `unshift()` | Start me add    | ✅ Yes    | `arr.unshift(1)` |
-| `shift()`   | Start se remove | ✅ Yes    | `arr.shift()`    |
+## 🔹 Basic Add / Remove Methods
+
+| Method      | Kya karta hai                     | Mutates Original? | Syntax Example   |
+| ----------- | --------------------------------- | ----------------- | ---------------- |
+| `push()`    | End me element add karta hai      | ✅ Yes             | `arr.push(5)`    |
+| `pop()`     | End se element remove karta hai   | ✅ Yes             | `arr.pop()`      |
+| `unshift()` | Start me element add karta hai    | ✅ Yes             | `arr.unshift(1)` |
+| `shift()`   | Start se element remove karta hai | ✅ Yes             | `arr.shift()`    |
 
 ---
 
-## 🔹 Slice / Splice
+## 🔹 Slice vs Splice (🔥 Interview Favorite)
 
-| Method     | Purpose      | Mutates? | Example           |
-| ---------- | ------------ | -------- | ----------------- |
-| `slice()`  | Copy part    | ❌ No     | `arr.slice(1,3)`  |
-| `splice()` | Add / Remove | ✅ Yes    | `arr.splice(1,1)` |
-
----
-
-## 🔹 Iteration / Transform
-
-| Method      | Kya karta hai | Mutates? | Example            |
-| ----------- | ------------- | -------- | ------------------ |
-| `forEach()` | Loop          | ❌ No     | `arr.forEach(fn)`  |
-| `map()`     | Transform     | ❌ No     | `arr.map(x=>x*2)`  |
-| `filter()`  | Filter        | ❌ No     | `arr.filter(x>2)`  |
-| `reduce()`  | Single value  | ❌ No     | `arr.reduce(fn,0)` |
+| Method     | Purpose                | Mutates? | Example           |
+| ---------- | ---------------------- | -------- | ----------------- |
+| `slice()`  | Portion copy karta hai | ❌ No     | `arr.slice(1,3)`  |
+| `splice()` | Add / Remove / Replace | ✅ Yes    | `arr.splice(1,1)` |
 
 ---
 
-## 🔹 Search / Sort
+## 🔹 Iteration / Transformation Methods
 
-| Method       | Kya karta hai | Mutates? | Example                |
-| ------------ | ------------- | -------- | ---------------------- |
-| `includes()` | Exists?       | ❌ No     | `arr.includes(2)`      |
-| `find()`     | First match   | ❌ No     | `arr.find(fn)`         |
-| `sort()`     | Sort          | ✅ Yes    | `arr.sort((a,b)=>a-b)` |
-| `reverse()`  | Reverse       | ✅ Yes    | `arr.reverse()`        |
+| Method      | Kya karta hai                | Mutates? | Example                |
+| ----------- | ---------------------------- | -------- | ---------------------- |
+| `forEach()` | Har element pe loop          | ❌ No     | `arr.forEach(fn)`      |
+| `map()`     | Naya transformed array       | ❌ No     | `arr.map(x => x*2)`    |
+| `filter()`  | Condition ke basis pe filter | ❌ No     | `arr.filter(x => x>2)` |
+| `reduce()`  | Single value me convert      | ❌ No     | `arr.reduce(fn,0)`     |
+
+---
+
+## 🔹 Search / Check Methods
+
+| Method        | Kya karta hai                 | Return  | Example             |
+| ------------- | ----------------------------- | ------- | ------------------- |
+| `includes()`  | Value exist karti hai ya nahi | Boolean | `arr.includes(2)`   |
+| `indexOf()`   | First index deta hai          | Number  | `arr.indexOf(2)`    |
+| `find()`      | First matched value           | Element | `arr.find(x=>x>2)`  |
+| `findIndex()` | Index of matched              | Number  | `arr.findIndex(fn)` |
+
+---
+
+## 🔹 Sorting / Reordering Methods
+
+| Method         | Kya karta hai        | Mutates? | Example                |
+| -------------- | -------------------- | -------- | ---------------------- |
+| `sort()`       | Array sort karta hai | ✅ Yes    | `arr.sort((a,b)=>a-b)` |
+| `reverse()`    | Order reverse        | ✅ Yes    | `arr.reverse()`        |
+| `toSorted()`   | Safe sort (ES2023)   | ❌ No     | `arr.toSorted()`       |
+| `toReversed()` | Safe reverse         | ❌ No     | `arr.toReversed()`     |
+
+---
+
+## 🔹 Merge / Flatten Methods
+
+| Method      | Kya karta hai          | Mutates? | Example            |
+| ----------- | ---------------------- | -------- | ------------------ |
+| `concat()`  | Arrays merge karta hai | ❌ No     | `arr.concat(arr2)` |
+| `flat()`    | Nested array flatten   | ❌ No     | `arr.flat(2)`      |
+| `flatMap()` | map + flat             | ❌ No     | `arr.flatMap(fn)`  |
+
+---
+
+## 🔹 Utility Methods
+
+| Method         | Kya karta hai           | Return | Example               |
+| -------------- | ----------------------- | ------ | --------------------- |
+| `join()`       | String banata hai       | String | `arr.join(",")`       |
+| `split()`      | String → array          | Array  | `"a,b".split(",")`    |
+| `fill()`       | Value se fill karta hai | ✅ Yes  | `arr.fill(0)`         |
+| `copyWithin()` | Copy inside array       | ✅ Yes  | `arr.copyWithin(1,0)` |
+
+---
+
+## 🔹 Creation & Check
+
+| Method            | Kya karta hai     | Return  | Example              |
+| ----------------- | ----------------- | ------- | -------------------- |
+| `Array.isArray()` | Array check       | Boolean | `Array.isArray(arr)` |
+| `Array.from()`    | Array banata hai  | Array   | `Array.from("ABC")`  |
+| `Array.of()`      | Safe array create | Array   | `Array.of(1,2,3)`    |
+
+---
+
+## 🔹 Copying Arrays (Shallow)
+
+| Method         | Copy Type | Mutates? | Example           |
+| -------------- | --------- | -------- | ----------------- |
+| Spread `...`   | Shallow   | ❌ No     | `[...arr]`        |
+| `slice()`      | Shallow   | ❌ No     | `arr.slice()`     |
+| `Array.from()` | Shallow   | ❌ No     | `Array.from(arr)` |
+
 
 ---
 
 # 🔥 STRING METHODS
+
+---
 
 ## 🔹 Search / Check
 
@@ -94,6 +142,8 @@ Level: **5+ Years Experience**
 ---
 
 # 🔥 OBJECT METHODS
+
+---
 
 ## 🔹 Create / Copy
 
@@ -133,19 +183,18 @@ Level: **5+ Years Experience**
 | `[] === []`    | false   | Reference |
 | `"5" + 1`      | "51"    | Coercion  |
 | `{}` === `{}`  | false   | Reference |
-| `arr.length=0` | Cleared | Mutation  |
-
+| `new Array(5)`   | Empty array | Length set        |
+| `arr.length = 0` | Clear array | Direct mutation   |
 ---
 
 # 🎯 ONE-LINE FINAL REVISION
 
-> Array = ordered mutable list
-> String = immutable text
-> Object = key–value reference-based structure
+Array = ordered mutable list  
+String = immutable text  
+Object = key–value reference-based structure  
 
 ---
 
 # 🔥 5+ YEARS INTERVIEW CLOSING LINE
 
-> “Main hamesha non-mutating methods use karta hoon aur state ko predictable rakhta hoon.”
-
+> “Main hamesha non-mutating methods prefer karta hoon jisse state predictable aur maintainable rahe.”
