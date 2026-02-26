@@ -320,3 +320,92 @@ obj.a = 5;
 > **Sync → Promise → setTimeout**
 > **`+` = concat | `-` = number**
 
+Here is a small **Markdown (.md)** file content:
+
+# null vs undefined (JavaScript)
+
+``` javascript
+function data(a = 5, b = 3) {
+  return a + b;
+}
+````
+
+## undefined
+
+* Uses default value
+* `data(undefined, undefined)` → **8**
+
+## null
+
+* Treated as a real value
+* `data(null, null)` → **0**
+
+## Rule
+
+Default parameters work only with **undefined**, not **null**.
+
+```
+
+data(undefined, null) // 5 + 0 = 5
+data(null, undefined) // 0 + 3 = 3
+
+```
+
+# Salary Hike Calculation
+
+``` javascript
+
+let data = [
+  { Name: 'Ram', Salary: 10000, 'Hike %': 30 },
+  { Name: 'Shyam', Salary: 25000, 'Hike %': 20 }
+];
+
+const fnCalculateNewSalary = (data) => {
+  return data.map(ele => ({
+    ...ele,
+    newSalary: ele.Salary + (ele.Salary * ele["Hike %"] / 100)
+  }));
+};
+
+console.log(fnCalculateNewSalary(data));
+
+/*
+Output:
+[
+  { Name: 'Ram', Salary: 10000, 'Hike %': 30, newSalary: 13000 },
+  { Name: 'Shyam', Salary: 25000, 'Hike %': 20, newSalary: 30000 }
+]
+*/
+
+```
+
+# React Execution Order Example
+
+``` javascript
+import { useEffect } from "react";
+
+function Comp() {
+  console.log(1);
+
+  useEffect(() => {
+    console.log(2);
+  }, []);
+
+  console.log(3);
+
+  return <div>Check Console</div>;
+}
+
+export default Comp;
+```
+
+### Explanation
+
+- `console.log(1)` → Runs first (during render)
+- `console.log(3)` → Runs second (still during render)
+- `console.log(2)` → Runs last (after render, inside `useEffect`)
+
+Final console output order:
+1
+3
+2

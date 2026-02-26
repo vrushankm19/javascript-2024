@@ -561,3 +561,75 @@ console.log(detFun(a,"Kp"))
 // Output:
 
 ```
+
+``` javascript
+
+// ### 1️⃣6️⃣ **Armstrong number**
+// 153 => 1*1*1 + 5*5*5 + 3*3*3 = 153 (True) : False
+
+function newFun(data){
+  let vLength = String(data).length;
+  let sData = String(data).split("");
+  let ans = [];
+  let lastData = 0;
+  for (let i = 0; i < sData.length; i++) {
+    // console.log(sData[i]);
+    let inData = sData[i];
+    for (let j = 0; j < vLength - 1; j++) {
+      inData = inData * sData[i];
+      // console.log(inData);
+    }
+    ans.push(inData);
+    // break
+  }
+  for(let lData of ans){
+    lastData = lastData + lData
+    // console.log(lastData);
+  }
+  // console.log(data, lastData);
+  return data == lastData ? `Your Value is Armstron Num: ${lastData}`: `Your Value is Not Armstron Num: ${lastData}`;
+}
+
+let a = 153;
+console.log(newFun(a))
+
+// Output: Your Value is Armstron Num: 153
+```
+
+``` javascript
+
+// ### 1️⃣6️⃣ **Armstrong number**
+// 153 => 1*1*1 + 5*5*5 + 3*3*3 = 153 (True) : False
+
+function newFun(data){
+  let vLength = String(data).length;
+  let sData = String(data).split("");
+  let ans = sData
+  .map(ele => Math.pow(Number(ele), vLength))
+  .reduce((a,b) => a + b);
+  
+  return data == ans ? 
+  `Your Value is Armstron Num: ${ans}`: 
+  `Your Value is Not Armstron Num: ${ans}`;
+}
+
+let a = 153;
+console.log(newFun(a))
+
+// Output: Your Value is Armstron Num: 153
+```
+
+``` javascript
+function fibonacci(n) {
+  let a = 0, b = 1;
+
+  for (let i = 0; i < n; i++) {
+    let next = a + b;
+    a = b;
+    b = next;
+  }
+}
+
+fibonacci(10);
+// Output: 55
+```
