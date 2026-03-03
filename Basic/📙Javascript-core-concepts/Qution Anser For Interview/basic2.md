@@ -633,3 +633,129 @@ function fibonacci(n) {
 fibonacci(10);
 // Output: 55
 ```
+
+``` javascript
+// ### 1️⃣7️⃣ **Fibonacci series**
+function newFun(data) {
+  let arr = [];
+  
+  if(data >= 1) arr.push(0);
+  if(data >= 2) arr.push(1);
+  
+  for (let i = 2; i < data; i++) {
+    arr.push(arr[i - 1] + arr[i - 2])
+  }
+  return arr
+}
+
+console.log(newFun(10));
+// Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+```
+
+``` javascript
+// Sum of digits
+
+function newFun(num){
+  return String(num).split("").reduce((a,b) => Number(a) + Number(b))
+}
+
+console.log(newFun(1234))
+// Output: 10
+```
+
+``` javascript
+// ### 2️⃣5️⃣ Object में से **key with highest value**
+function newFun(dt){
+  let ans = 0;
+  let ansInd = 0;
+  let ndata = Object.entries(dt)
+  for (let prop in ndata) {
+    if(ndata[prop][1] > ans){
+      ans = ndata[prop][1]
+      ansInd = ndata[prop][0]
+    }
+  }
+  return [ans, ansInd];
+}
+
+const data = {
+  a: 10,
+  b: 45,
+  c: 23,
+  d: 67,
+  e: 34
+};
+console.log(newFun(data));
+// Output: [67, 'd']
+```
+
+``` javascript
+// ### 2️⃣5️⃣ Object में से **key with highest value**
+function newFun(data){
+  
+  const maxKey = Object.keys(data).reduce((a, b) => 
+    data[a] > data[b] ? a : b
+  );
+  return maxKey;
+}
+
+const data = {
+  a: 10,
+  b: 45,
+  c: 23,
+  d: 67,
+  e: 34
+};
+console.log(newFun(data));
+// Output: 'd'
+```
+
+``` javascript
+function newFun(data){
+  let ans = {};
+  for(let i of data){
+    ans[i] = (ans[i] || 0) + 1;
+  }
+  // let arr = Object.entries(ans).sort((a,b) => )
+  let minVal = 999;
+  let minInd = 0;
+  for(let j in ans){
+      if(ans[j] < minVal){
+        minVal = ans[j]
+        minInd = j
+        // console.log(minVal)
+      }
+  }
+  return [minInd, minVal];
+}
+
+const str = "abcbcbcacbcbcb";
+console.log(newFun(str))
+// Output: ['a', 2]
+
+// Version 2
+function newFun(data){
+  let ans = {};
+  for(let i of data){
+    ans[i] = (ans[i] || 0) + 1;
+  }
+  let arr = Object.entries(ans).reduce((a,b) => a < b ? a : b)
+  return arr;
+}
+
+const str = "abcbcbcacbcbcb";
+console.log(newFun(str))
+// Output: ['a', 2]
+```
+
+``` javascript
+function newFun(data){
+  let value = String(data).split("");
+  let ansIn = value.length;
+  return data + value.slice(0, ansIn - 1).reverse().join("");
+}
+
+const str = 1234;
+console.log(newFun(str));
+// Output: 1234321
+```
