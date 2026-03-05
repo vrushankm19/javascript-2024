@@ -759,3 +759,21 @@ const str = 1234;
 console.log(newFun(str));
 // Output: 1234321
 ```
+
+``` javascript
+// ### 2️⃣0️⃣ **Power of a number**
+function newFun(a,b){
+  if(b === 0) return 1;
+  let ans = 1;
+  let power = Math.abs(b);
+  
+  for (let i = 0; i < power; i++) {
+    ans = ans * a;
+  }
+  
+  return b > 0 ? ans : 1/ans;
+}
+
+console.log(newFun(2 ,-2));
+// Output: 0.25
+```
