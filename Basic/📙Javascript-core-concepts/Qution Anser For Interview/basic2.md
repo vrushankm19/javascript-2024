@@ -461,7 +461,7 @@ function newFun(data) {
   for (let i = 0; i < data.length; i++) {
     if (current.includes(data[i])) {
       // console.log(current.indexOf(data[i]), 1)
-      current = current.slice(current.indexOf(data[i]) + 1);
+      current = current.slice(current.indexOf(data[i]) + 1); // हम current स्ट्रिंग को उस करैक्टर के पहले वाले हिस्से से काट रहे हैं, ताकि हम दोहराए गए करैक्टर के बाद वाली नई स्ट्रिंग से जारी रखें।
       // console.log(current)
     }
     current += data[i];
