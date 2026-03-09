@@ -777,3 +777,42 @@ function newFun(a,b){
 console.log(newFun(2 ,-2));
 // Output: 0.25
 ```
+
+``` javascript
+
+
+function newFun(ele){
+  let arr = [];
+  for(let ind in ele){
+    arr.push(ele[ind].first);
+  }
+  return arr.map(ele => ele).sort();
+  // return arr.map(ele => ele.charAt(0).toLowerCase()).sort((a, b) => console.log(typeof a));
+  // return arr.charAt(0);
+}
+ const names = [
+   {
+     first: "Mahesh",
+     last: "kumar",
+   },
+   {
+     first: "Ganesh",
+     last: "Sharma",
+   },
+   {
+     first: "Anil",
+     last: "Sai",
+   },
+   {
+     first: "Sekhar",
+     last: "Martin",
+   },
+   {
+     first: "Abhishek",
+     last: "Gupta",
+   },
+ ];
+
+console.log(newFun(names))
+// Output: ['Abhishek', 'Anil', 'Ganesh', 'Mahesh', 'Sekhar']
+```

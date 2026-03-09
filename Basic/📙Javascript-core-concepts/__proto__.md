@@ -1,82 +1,167 @@
-# 📌 Prototype ( `__proto__` ) in JavaScript
+# 1️⃣ Prototype kya hota hai?
 
-## 🔹 Prototype kya hota hai?
+JavaScript ek **prototype-based language** hai.
 
-> JavaScript me har object ke paas ek hidden property hoti hai jise bolte hain **prototype**.
+👉 Har **JavaScript object** ke paas ek hidden property hoti hai:
 
-Simple words me:
+```
+[[Prototype]]
+```
 
-👉 Object dusre object se properties inherit kar sakta hai
-👉 Is system ko bolte hain **Prototypal Inheritance**
+Isko access karne ke liye hum commonly use karte hain:
+
+```
+__proto__
+```
+
+Prototype ka matlab:
+
+> Ek object dusre object se properties aur methods inherit kar sakta hai.
 
 ---
 
-# 🔥 Sabse Important Line
+## Example
 
-> JavaScript prototype-based language hai, class-based nahi.
+```javascript
+const person = {
+  greet() {
+    console.log("Hello");
+  }
+};
 
----
-
-# 🔹 Example 1 (Basic Object)
-
-```js
-let obj = {
+const user = {
   name: "Rahul"
+};
+
+user.__proto__ = person;
+
+user.greet();
+```
+
+Output:
+
+```
+Hello
+```
+
+Explanation:
+
+* `user` object me `greet()` nahi hai
+* JS prototype chain me check karega
+* `person` me mil gaya → run ho gaya
+
+---
+
+# 2️⃣ Prototype Chain
+
+JavaScript property search karte waqt ek chain follow karta hai.
+
+Example:
+
+```javascript
+const obj = {
+  name: "Amit"
 };
 
 console.log(obj.toString());
 ```
 
-Tumne `toString()` define nahi kiya
-Fir bhi kaam kar raha hai ❓
+Question: `toString()` kaha se aaya?
 
-👉 Kyunki:
-
-```
-obj → Object.prototype → null
-```
-
-`toString()` Object.prototype se aa raha hai
-
----
-
-# 🔹 **proto** kya hota hai?
-
-`__proto__` ek reference hota hai jo batata hai:
-
-👉 Ye object kis object se inherit kar raha hai
-
-```js
-console.log(obj.__proto__);
-```
-
-Ye show karega:
+Flow:
 
 ```
+obj
+ ↓
 Object.prototype
+ ↓
+null
 ```
+
+`toString()` **Object.prototype** me hota hai.
+
+Is process ko **prototype chain** bolte hain.
 
 ---
 
-# 🔥 Constructor Function Example
+# 3️⃣ Prototypal Inheritance kya hai?
 
-```js
+Jab ek object dusre object ki properties aur methods inherit karta hai **via prototype**, use kehte hain:
+
+> **Prototypal Inheritance**
+
+---
+
+## Example
+
+```javascript
+const animal = {
+  eat() {
+    console.log("Eating...");
+  }
+};
+
+const dog = Object.create(animal);
+
+dog.bark = function () {
+  console.log("Barking...");
+};
+
+dog.eat();
+dog.bark();
+```
+
+Output:
+
+```
+Eating...
+Barking...
+```
+
+Explanation:
+
+```
+dog
+ ↓
+animal
+ ↓
+Object.prototype
+ ↓
+null
+```
+
+Dog ne animal se method inherit kiya.
+
+---
+
+# 4️⃣ Constructor Function + Prototype
+
+Ye real interview example hota hai.
+
+```javascript
 function Person(name) {
   this.name = name;
 }
 
-Person.prototype.sayHello = function() {
+Person.prototype.sayHello = function () {
   console.log("Hello " + this.name);
 };
 
-let p1 = new Person("Rahul");
-p1.sayHello();
+const user1 = new Person("Rahul");
+
+user1.sayHello();
 ```
 
-### Memory me kya hota hai?
+Output:
 
 ```
-p1
+Hello Rahul
+```
+
+Flow:
+
+```
+user1
  ↓
 Person.prototype
  ↓
@@ -85,92 +170,79 @@ Object.prototype
 null
 ```
 
-Isko bolte hain:
-
-# 🔥 Prototype Chain
-
 ---
 
-# 📌 Prototype Chain kya hoti hai?
+# 5️⃣ Prototype ka fayda
 
-Jab JS kisi property ko find karta hai:
+Agar method prototype me ho to:
 
-1. Pehle object me dekhta hai
-2. Nahi mila → prototype me dekhta hai
-3. Fir uske prototype me
-4. Jab tak null na mil jaye
+❌ Har object me duplicate nahi banta
+✅ Memory efficient hota hai
 
----
+Wrong way:
 
-# 🔹 Modern Way (Object.create)
+```javascript
+function User(name) {
+  this.name = name;
 
-```js
-let animal = {
-  eats: true
-};
-
-let dog = Object.create(animal);
-
-console.log(dog.eats); // true
+  this.sayHi = function () {
+    console.log("Hi");
+  };
+}
 ```
 
-👉 `dog` ka prototype = `animal`
+Right way:
+
+```javascript
+User.prototype.sayHi = function () {
+  console.log("Hi");
+};
+```
 
 ---
 
-# 🔥 Important Difference
+# 6️⃣ Modern JavaScript (class syntax)
 
-| Term            | Meaning                   |
-| --------------- | ------------------------- |
-| prototype       | Function ka property      |
-| **proto**       | Object ka reference       |
-| Prototype Chain | Inheritance lookup system |
+JS class bhi internally prototype use karta hai.
 
----
-
-# 🔹 Class me bhi prototype use hota hai
-
-```js
+```javascript
 class Person {
   constructor(name) {
     this.name = name;
   }
 
   greet() {
-    console.log("Hi " + this.name);
+    console.log("Hello " + this.name);
   }
 }
+
+const p1 = new Person("Rahul");
+p1.greet();
 ```
 
-Behind the scenes:
+Actually behind the scenes:
 
-👉 `greet()` actually `Person.prototype` me add hota hai
-
----
-
-# 🧠 Real Life Example
-
-Socho:
-
-* Ek parent ke paas ghar hai
-* Child ke paas khud ka ghar nahi
-* Wo parent ka use karta hai
-
-👉 Ye hi prototype inheritance hai 😄
+```
+greet → Person.prototype
+```
 
 ---
 
-# 🎯 Interview One-Line Answer
+# 7️⃣ Prototype vs Prototypal Inheritance
 
-> JavaScript me prototype ek mechanism hai jisse objects dusre objects se properties aur methods inherit karte hain, aur ye prototype chain ke through work karta hai.
+| Concept                | Meaning                                                     |
+| ---------------------- | ----------------------------------------------------------- |
+| Prototype              | Object ka reference jisse properties inherit hoti hain      |
+| Prototypal Inheritance | Mechanism jisse objects dusre objects se inherit karte hain |
 
 ---
 
-# 🔥 Very Important Interview Points
+# 🎯 Interview Ready Answer
 
-✔ JS is prototype-based language
-✔ Har function ke paas prototype property hoti hai
-✔ Har object ke paas **proto** hota hai
-✔ Lookup prototype chain me hota hai
-✔ Classes bhi internally prototype use karti hain
+Agar interviewer pooche:
 
+**What is prototypal inheritance in JavaScript?**
+
+Tum bol sakte ho:
+
+> JavaScript uses prototypal inheritance where objects can inherit properties and methods from other objects through the prototype chain. When a property is accessed, JavaScript first checks the object itself, then its prototype, and continues up the chain until it finds the property or reaches null.
