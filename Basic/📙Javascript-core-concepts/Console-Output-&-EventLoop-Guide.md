@@ -409,3 +409,10 @@ Final console output order:
 1
 3
 2
+
+``` javascript
+function fun(...apple, ...piru, ...pinapler) {
+  return [...apple, ...piru, ...pinapler];
+}
+// ❌ SyntaxError: Rest parameter must be last formal parameter
+```

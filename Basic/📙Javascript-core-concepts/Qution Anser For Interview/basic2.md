@@ -816,3 +816,64 @@ function newFun(ele){
 console.log(newFun(names))
 // Output: ['Abhishek', 'Anil', 'Ganesh', 'Mahesh', 'Sekhar']
 ```
+
+``` javascript
+function newFun(obj1,obj2){
+  // return JSON.stringify(obj1) === JSON.stringify(obj2);
+  const key1 = Object.keys(obj1);
+  const key2 = Object.keys(obj2);
+  
+  if(key1.length !== key2.length) return false;
+  
+  for(let i of key1){
+    if (obj1[i] !== obj2[i]) return false;
+  }
+  
+  return true
+}
+
+const obj1 = { name: "Rahul", age: 20 };
+const obj2 = { name: "Rahul", age: 20 };
+
+console.log(newFun(obj1,obj2))
+// Output: true
+```
+
+``` javascript
+
+// ### 2️⃣7️⃣ **Deep clone** object
+function newFun(obj1){
+  // let a = {...obj1};
+  // a.address.pin = 9987;
+  // return [a,obj1] // Same
+  
+  // let a = structuredClone(obj1); // option 1
+  let a = JSON.parse(JSON.stringify(obj1))
+  
+  a.address.pin = 9987;
+  return [a,obj1]
+}
+
+const obj1 = { 
+  name: "Rahul", 
+  age: 20, 
+  address:{
+    pin: 123,
+  }
+};
+
+console.log(newFun(obj1))
+// Output: [{ name: 'Rahul', age: 20, address: { pin: 9987 } }, { name: 'Rahul', age: 20, address: { pin: 123 } }]
+```
+
+``` javascript
+// Flat Array using flatMap method
+function newFun(ele) {
+  return ele.flatMap(e => Array.isArray(e) ? newFun(e) : e);
+}
+
+console.log(newFun([1, 2, [3, [4, 5, [6, [7]]]]])); 
+// Output: [1, 2, 3, 4, 5, 6, 7]
+```
+
+``` javascript

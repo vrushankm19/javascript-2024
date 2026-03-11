@@ -190,5 +190,22 @@ fixed(); // Amit
 > call aur apply function ko turant execute karte hain,
 > jabki bind ek new function return karta hai jo baad me execute hota hai.
 
----
+``` javascript
+// Example:
+function greet(city, country) {
+  console.log(
+    "Hello " + this.name + " from " + city + ", " + country
+  );
+}
+let person = {
+  name: "Rahul"
+};
+
+greet.call(person, "Delhi", "India"); // call 
+greet.apply(person, ["Delhi", "India"]); // apply
+
+let a = greet.bind(person, "Delhi", "India"); // bind
+a()
+```
+
 

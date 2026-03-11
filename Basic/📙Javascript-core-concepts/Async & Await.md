@@ -229,7 +229,14 @@ const main1 = async () => {
   console.log(a)
 }
 
-main1()
+main1();
+// Output:
+// Welcome to weather control room
+// Fetching Delhi Weather Please wait ...
+// Fetched Delhi Weather: 27 Deg
+// Fetching Bangalore Weather Please wait ...
+// Fetched Bangalore Weather: 21 Deg
+// Hey I am cherry and I am not waiting
+// [ '27 Deg', '21 Deg' ]
 ```
 
----
