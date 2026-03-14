@@ -85,3 +85,89 @@
 43. Project में error handling कैसे की?
 
 ---
+
+``` javascript
+useEffect(() => {},[name])
+
+let [name,setaName] = useState("name")
+
+setaName("asds")
+
+___________________________________________
+
+function newFun(){
+  let a =  10;
+  return () => console.log(a++);
+}
+
+let fun = newFun();
+fun();
+fun();
+fun();
+fun();
+
+___________________________________________
+
+let newPro =  new Promise(resolve,reject){
+  let success = tue;
+  if(success == true){
+    resolve("data...")
+  }else {
+    reject("Error...")
+  }
+}
+
+_________________________________________
+
+var a;
+let b;
+
+_______________________________
+
+console.log(a);
+var a = 10;
+
+
+console.log(b);
+let b = 10;
+{
+  
+}
+______________________________________
+
+
+setTimeout(function() {
+  console.log("hello");
+}, 1000);
+
+function(){
+  console.log(5);
+  setTimeout(function() {
+    console.log("hello");
+  }, 0);
+  console.log(10);
+}
+let a = 10;
+
+let a;
+
+5 , 10, "hello"
+
+
+______________________________________
+function newFun(arr,ele){
+  let ans = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if((arr[i] + arr[j]) == ele){
+        console.log(arr[i] , arr[j])
+        ans.push([i, j]);
+      }
+    }
+  }
+  return ans;
+}
+
+console.log(newFun([1,2,3,6,7,23,45],9));
+
+```

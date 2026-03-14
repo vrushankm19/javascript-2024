@@ -416,3 +416,8 @@ function fun(...apple, ...piru, ...pinapler) {
 }
 // ❌ SyntaxError: Rest parameter must be last formal parameter
 ```
+
+<!-- Basic\🏢Compnay Interview QA\capgemini-interview.md -->
+<!-- * 📄 **[Optional Chaining (?.)](./Optional-Chaining.md)** -->
+
+* 📄 **[capgemini-interview](/Basic/🏢Compnay%20Interview%20QA/capgemini-interview.md)**

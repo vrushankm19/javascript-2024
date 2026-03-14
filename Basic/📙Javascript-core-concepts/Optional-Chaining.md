@@ -136,8 +136,14 @@ const user: User = {};
 console.log(user.profile?.name); // undefined
 ```
 
----
+``` javascript
+let users = [{ name: "A" }, { name: "B" }];
 
-If you want, Jarvis can also explain:
-👉 **Difference between Optional Chaining (`?.`) vs Nullish Coalescing (`??`)**
-👉 **Real interview questions on Optional Chaining**
+let a = users?.[0]?.name;
+// let b = users?.[5].name; // ❌ TypeError: Cannot read properties of undefined (reading 'name')
+let b = users?.[5]?.name; // ✅ if i not use optional chaining then it will throw error and code will be crash
+console.log("hello")
+console.log(a) // A
+console.log(b) // undefined
+```
+
