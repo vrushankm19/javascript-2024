@@ -115,7 +115,7 @@ function newFun(data){
   return arr2
 }
 
-console.log(newFun([1, 2, 3, 2, 4, 2])); // [2, 1]
+console.log(newFun([1, 2, 3, 2, 4, 2])); // Output: [2]
 ```
 
 ``` javascript
@@ -133,7 +133,7 @@ function newFun(data){
   return arr
 }
 
-console.log(newFun([1, 2, 3, 2, 4, 2])); // [2, 1]
+console.log(newFun([1, 2, 3, 2, 4, 2])); // Output: [1, 2, 3, 4]
 ```
 
 ``` javascript
@@ -148,7 +148,7 @@ function newFun(data){
   return ans
 }
 
-console.log(newFun([1, 2, 3, 2, 4, 2])); // [2, 1]
+console.log(newFun([1, 2, 3, 2, 4, 2])); // Output: [4, 1]
 ```
 
 ``` javascript
@@ -161,7 +161,7 @@ function newFun(data){
   return ans.toLowerCase() === data.toLowerCase();
 }
 
-console.log(newFun("Mom")); // [2, 1]
+console.log(newFun("Mom")); // Output: true
 ```
 
 ``` javascript
@@ -179,7 +179,7 @@ function newFun(data){
   return ans
 }
 
-console.log(newFun([1,2,[3,4,[5,6,[7]]]])); // [2, 1]
+console.log(newFun([1,2,[3,4,[5,6,[7]]]])); // Output: [1, 2, 3, 4, 5, 6, 7]
 ```
 
 ``` javascript
@@ -268,7 +268,7 @@ function bubbleSort(arr) {
   return arr;
 }
 
-console.log(bubbleSort([5, 2, 9, 1, 100])); // [1, 2, 5, 9]
+console.log(bubbleSort([5, 2, 9, 1, 100])); // Output: [1, 2, 5, 9, 100]
 ```
 
 ``` javascript
@@ -537,4 +537,112 @@ function App() {
 }
 
 export default App;
+```
+
+
+| Method | Use                  |
+| ------ | -------------------- |
+| GET    | Data lena            |
+| POST   | Data bhejna (create) |
+| PUT    | Data update          |
+| PATCH  | Partial update       |
+| DELETE | Data delete          |
+
+
+``` javaScript
+import React, { Component } from "react";
+
+class InputResetter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: ""
+    };
+  }
+
+  handleChange = (e) => {
+    this.setState({ text: e.target.value });
+  };
+
+  handleReset = () => {
+    this.setState({ text: "" });
+  };
+
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+          value={this.state.text}
+          onChange={this.handleChange}
+        />
+
+        <p>{this.state.text}</p>
+
+        <button onClick={this.handleReset}>Reset</button>
+      </div>
+    );
+  }
+}
+
+export default InputResetter;
+```
+
+``` javaScript
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h2 data-testid="count">{count}</h2>
+
+      <button onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
+
+      <button onClick={() => setCount(count - 1)}>
+        Decrement
+      </button>
+
+      <button onClick={() => setCount(0)}>
+        Reset
+      </button>
+    </div>
+  );
+}
+
+export default Counter;
+
+__________________________________________________________________
+
+
+import { render, screen, fireEvent } from "@testing-library/react";
+import Counter from "./Counter";
+
+test("renders initial count", () => {
+  render(<Counter />);
+  expect(screen.getByTestId("count").textContent).toBe("0");
+});
+
+test("increments count", () => {
+  render(<Counter />);
+  fireEvent.click(screen.getByText("Increment"));
+  expect(screen.getByTestId("count").textContent).toBe("1");
+});
+
+test("decrements count", () => {
+  render(<Counter />);
+  fireEvent.click(screen.getByText("Decrement"));
+  expect(screen.getByTestId("count").textContent).toBe("-1");
+});
+
+test("resets count", () => {
+  render(<Counter />);
+  fireEvent.click(screen.getByText("Increment"));
+  fireEvent.click(screen.getByText("Reset"));
+  expect(screen.getByTestId("count").textContent).toBe("0");
+});
+
 ```
